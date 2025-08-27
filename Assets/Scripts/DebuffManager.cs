@@ -4,23 +4,30 @@ public class DebuffManager : MonoBehaviour
 {
     [Header("Debuff Settings")]
     [Range(0, 1)]
-    private float debuffChance = 0.5f;
+    [SerializeField] private float debuffChance = 0.5f;
 
     [Header("Debuff Amounts")]
-    [Tooltip("The amount to reduce player speed by.")]
-    private float speedReductionAmount = 1f;
+    [SerializeField] private float speedReductionAmount = 1f;
+    [SerializeField] private float visionReductionAmount = 5f;
 
-    [Tooltip("The amount to reduce the vision cone angle by.")]
-    private float visionReductionAmount = 10f;
+    [Header("Controller References")]
+    [SerializeField] private CoinDrainController coinDrainController; // <-- ADD THIS
 
-    // References to player components
+    // References
     private PlayerMovement playerMovement;
     private PlayerVision playerVision;
+    private MazeManager mazeManager;
 
     void Start()
     {
+        InitializeReferences();
+    }
+
+    private void InitializeReferences()
+    {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         playerVision = FindFirstObjectByType<PlayerVision>();
+        mazeManager = FindFirstObjectByType<MazeManager>();
     }
 
     public void TryApplyRandomDebuff()
@@ -37,17 +44,37 @@ public class DebuffManager : MonoBehaviour
 
     private void ApplyRandomDebuff()
     {
-        int debuffType = Random.Range(0, 2);
+        // Increase the range to include the new debuff (0, 1, 2, or 3)
+        int debuffType = Random.Range(0, 4);
 
         if (debuffType == 0)
         {
-            Debug.Log($"Applying Speed Debuff! Speed reduced by {speedReductionAmount}.");
+            Debug.Log($"Applying Speed Debuff!");
             playerMovement.ReduceSpeed(speedReductionAmount);
         }
-        else
+        else if (debuffType == 1)
         {
-            Debug.Log($"Applying Vision Debuff! Angle reduced by {visionReductionAmount}.");
+            Debug.Log($"Applying Vision Debuff!");
             playerVision.ReduceVision(visionReductionAmount);
         }
+        else if (debuffType == 2)
+        {
+            mazeManager.BlockPathBehindPlayer();
+        }
+        else // debuffType == 3
+        {
+            // Call the new debuff logic from our CoinDrainController
+            coinDrainController.ActivateDebuff();
+        }
+    }
+
+    public void RemoveAllDebuffs()
+    {
+        Debug.Log("SAFE ZONE REACHED: Removing all debuffs.");
+
+        // Tell each component to reset itself
+        playerMovement.ResetSpeed();
+        playerVision.ResetVision();
+        coinDrainController.DeactivateDebuff();
     }
 }

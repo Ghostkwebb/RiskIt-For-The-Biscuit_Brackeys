@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RunawayCoin : MonoBehaviour
@@ -9,7 +11,7 @@ public class RunawayCoin : MonoBehaviour
 
     // State
     private bool isFleeing = false;
-    private Vector2 lockedFleeDirection; // The direction the coin is locked into
+    private Transform playerTransform;
 
     // Components
     private Rigidbody2D rb;
@@ -17,8 +19,7 @@ public class RunawayCoin : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        debuffManager = FindFirstObjectByType<DebuffManager>();
+        InitializeComponents();
     }
 
     void FixedUpdate()
@@ -26,28 +27,65 @@ public class RunawayCoin : MonoBehaviour
         HandleMovement();
     }
 
+    private void InitializeComponents()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        debuffManager = FindFirstObjectByType<DebuffManager>();
+    }
+
     private void HandleMovement()
     {
         if (isFleeing)
         {
-            FleeInLockedDirection();
+            FleeFromPlayer();
         }
     }
 
-    private void FleeInLockedDirection()
+    private void FleeFromPlayer()
     {
-        // Check if the path is blocked by a wall
-        if (IsPathBlocked(lockedFleeDirection))
+        // Find the best possible direction to escape
+        Vector2 bestDirection = FindBestFleeDirection();
+
+        // If bestDirection is (0,0), it means there's no escape path
+        if (bestDirection == Vector2.zero)
         {
-            // If we hit a wall, we are cornered. Stop fleeing permanently.
-            isFleeing = false;
             Debug.Log("Coin is cornered!");
+            isFleeing = false; // Give up
+            return;
         }
-        else
+
+        // Move in the chosen best direction
+        rb.MovePosition(rb.position + bestDirection * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    // This is the new "brain" of the coin
+    private Vector2 FindBestFleeDirection()
+    {
+        // 1. Define all possible directions
+        Vector2[] allDirections = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+
+        // 2. Find all directions that are not blocked by a wall
+        List<Vector2> validDirections = new List<Vector2>();
+        foreach (var dir in allDirections)
         {
-            // If the path is clear, continue moving in the locked direction.
-            rb.MovePosition(rb.position + lockedFleeDirection * moveSpeed * Time.fixedDeltaTime);
+            if (!IsPathBlocked(dir))
+            {
+                validDirections.Add(dir);
+            }
         }
+
+        // 3. If there are no valid directions, return Vector2.zero to signal we are trapped
+        if (validDirections.Count == 0)
+        {
+            return Vector2.zero;
+        }
+
+        // 4. From the valid directions, find the one that points most away from the player
+        Vector2 idealFleeDirection = ((Vector2)transform.position - (Vector2)playerTransform.position).normalized;
+
+        // Use LINQ to find the best direction based on the dot product score
+        // The highest score (closest to 1) is the direction most aligned with the ideal flee path
+        return validDirections.OrderByDescending(dir => Vector2.Dot(dir, idealFleeDirection)).First();
     }
 
     private bool IsPathBlocked(Vector2 direction)
@@ -56,43 +94,28 @@ public class RunawayCoin : MonoBehaviour
         return hit.collider != null;
     }
 
-    // This is called when the player enters the large trigger zone
+    // Called when the player enters the large trigger zone
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // If the coin is already fleeing, do nothing.
-        if (isFleeing || !other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            return;
+            Debug.Log("Player detected! Starting to flee.");
+            isFleeing = true;
+            playerTransform = other.transform;
         }
-
-        DetermineFleeDirection(other.transform.position);
-
-        isFleeing = true;
-        Debug.Log($"Player detected! Fleeing in direction: {lockedFleeDirection}");
     }
 
-    // Decides whether to flee horizontally or vertically based on the player's approach.
-    private void DetermineFleeDirection(Vector3 playerPosition)
+    // Called when the player leaves the large trigger zone
+    private void OnTriggerExit2D(Collider2D other)
     {
-        // Get the vector pointing from the coin to the player
-        Vector2 directionToPlayer = playerPosition - transform.position;
-
-        // Check if the player is approaching more from the sides or from top/bottom
-        if (Mathf.Abs(directionToPlayer.x) > Mathf.Abs(directionToPlayer.y))
+        if (other.CompareTag("Player"))
         {
-            // Player is more horizontal to the coin, so flee horizontally.
-            // If player is on the right (x > 0), flee left. Otherwise, flee right.
-            lockedFleeDirection = (directionToPlayer.x > 0) ? Vector2.left : Vector2.right;
-        }
-        else
-        {
-            // Player is more vertical to the coin, so flee vertically.
-            // If player is above (y > 0), flee down. Otherwise, flee up.
-            lockedFleeDirection = (directionToPlayer.y > 0) ? Vector2.down : Vector2.up;
+            Debug.Log("Player left the area. Coin stopped.");
+            isFleeing = false;
         }
     }
 
-    // This is called when the player physically collides with the coin
+    // Called when the player physically collides with the coin
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.CompareTag("Player"))

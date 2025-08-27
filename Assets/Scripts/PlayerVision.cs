@@ -5,11 +5,17 @@ public class PlayerVision : MonoBehaviour
 {
     private Light2D visionLight;
     private Vector3 mousePosition;
+
     [SerializeField] private float minVisionAngle = 10f;
+    private float initialVisionAngle;
 
     void Start()
     {
         visionLight = GetComponentInChildren<Light2D>();
+        if (visionLight != null)
+        {
+            initialVisionAngle = visionLight.pointLightOuterAngle;
+        }
     }
 
     void Update()
@@ -34,6 +40,16 @@ public class PlayerVision : MonoBehaviour
             }
         }
     }
+
+    public void ResetVision()
+    {
+        if (visionLight != null)
+        {
+            Debug.Log("Vision has been reset!");
+            visionLight.pointLightOuterAngle = initialVisionAngle;
+        }
+    }
+
     private void GetMousePosition()
     {
         // Get the mouse position in world space

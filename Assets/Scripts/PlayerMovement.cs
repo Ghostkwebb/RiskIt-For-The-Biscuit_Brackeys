@@ -7,12 +7,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    private float initialMoveSpeed;
 
     public Vector2 lastMovementDirection { get; private set; } = Vector2.down; // Start facing down
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        initialMoveSpeed = moveSpeed;
     }
 
     void Update()
@@ -33,6 +35,12 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = minMoveSpeed;
         }
+    }
+
+    public void ResetSpeed()
+    {
+        Debug.Log("Speed has been reset!");
+        moveSpeed = initialMoveSpeed;
     }
 
     private void HandleInput()
