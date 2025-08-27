@@ -6,18 +6,18 @@ public class Coin : MonoBehaviour
 
     void Start()
     {
-        // Use the new, recommended method
         debuffManager = FindFirstObjectByType<DebuffManager>();
-        if (debuffManager == null)
-        {
-            Debug.LogError("DebuffManager not found in the scene!");
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.AddCoins(1);
+            }
             debuffManager.TryApplyRandomDebuff();
             Destroy(gameObject);
         }

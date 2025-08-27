@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    public Vector2 lastMovementDirection { get; private set; } = Vector2.down; // Start facing down
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +39,12 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        // If the player is moving, update the last direction
+        if (movement.sqrMagnitude > 0.1f)
+        {
+            lastMovementDirection = movement.normalized;
+        }
     }
 
     private void HandleMovement()
