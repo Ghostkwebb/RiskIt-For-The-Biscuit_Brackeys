@@ -40,7 +40,10 @@ public class PlayerStats : MonoBehaviour
     {
         if (coinCountText != null)
         {
-            coinCountText.text = $"Coins: {coinCount}";
+            if (coinCount == 1 || coinCount == 0)
+                coinCountText.text = $"Coin: {coinCount}";
+            else
+                coinCountText.text = $"Coins: {coinCount}";
         }
     }
 }
