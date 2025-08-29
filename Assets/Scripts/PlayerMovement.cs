@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         HandleInput();
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            GetComponent<PlayerHealth>().TakeDamage(1);
+        }
     }
 
     void FixedUpdate()
