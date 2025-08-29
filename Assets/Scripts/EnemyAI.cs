@@ -1,120 +1,116 @@
 using UnityEngine;
+using Pathfinding;
 
+[RequireComponent(typeof(Seeker))]
+[RequireComponent(typeof(AIPath))]
 public class EnemyAI : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 2.5f;
-    [SerializeField] private float leashDistance = 10f; // How far it will chase from its start point
+    [SerializeField] private float leashDistance = 10f;
 
     [Header("Combat")]
     [SerializeField] private int damage = 1;
 
-    // A simple state machine to define the enemy's behavior
-    private enum State
-    {
-        IDLE,
-        CHASING,
-        RETURNING
-    }
 
+    private enum State { IDLE, CHASING, RETURNING }
     private State currentState;
     private Transform playerTransform;
     private Vector3 startPosition;
-    private Rigidbody2D rb;
+
+    // --- A* Component References ---
+    private Seeker seeker;
+    private AIPath aiPath;
 
     void Start()
     {
         Initialize();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        HandleState();
+        // We use Update for state checks that don't involve physics.
+        HandleStateChecks();
     }
 
     private void Initialize()
     {
-        rb = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         currentState = State.IDLE;
+
+        // Get the A* components
+        seeker = GetComponent<Seeker>();
+        aiPath = GetComponent<AIPath>();
+
+        // Disable the AIPath component initially. We only want it active when chasing or returning.
+        aiPath.canMove = false;
     }
 
-    // This is our main state machine, called every physics update
-    private void HandleState()
+    // This method decides WHEN to change state.
+    private void HandleStateChecks()
     {
         switch (currentState)
         {
             case State.IDLE:
-                // Do nothing while idle, just wait for the player
+                // If we become idle, stop moving.
+                aiPath.canMove = false;
                 break;
+
             case State.CHASING:
-                HandleChasing();
+                // If we are chasing, make sure we are moving and have a target.
+                aiPath.canMove = true;
+                aiPath.destination = playerTransform.position;
+
+                // Check if we should stop chasing (leash distance).
+                if (Vector2.Distance(transform.position, startPosition) > leashDistance)
+                {
+                    ChangeState(State.RETURNING);
+                }
                 break;
+
             case State.RETURNING:
-                HandleReturning();
+                // If we are returning, make sure we are moving towards our start point.
+                aiPath.canMove = true;
+                aiPath.destination = startPosition;
+
+                // Check if we have arrived home.
+                // aiPath.reachedEndOfPath is a handy property for this.
+                if (aiPath.reachedEndOfPath)
+                {
+                    ChangeState(State.IDLE);
+                }
                 break;
         }
     }
 
-    private void HandleChasing()
+    // A helper method to cleanly change states and handle logic.
+    private void ChangeState(State newState)
     {
-        // If the player gets too far from the enemy's starting point, give up and return.
-        if (Vector2.Distance(transform.position, startPosition) > leashDistance)
-        {
-            currentState = State.RETURNING;
-            return;
-        }
+        if (currentState == newState) return;
 
-        // If the player is somehow gone (e.g., died), return.
-        if (playerTransform == null)
-        {
-            currentState = State.RETURNING;
-            return;
-        }
-
-        // Move towards the player
-        Vector2 direction = (playerTransform.position - transform.position).normalized;
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-    }
-
-    private void HandleReturning()
-    {
-        // Move towards the starting position
-        Vector2 direction = (startPosition - transform.position).normalized;
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-
-        // If we have arrived back at the start, go back to idle.
-        if (Vector2.Distance(transform.position, startPosition) < 0.1f)
-        {
-            currentState = State.IDLE;
-        }
+        currentState = newState;
+        Debug.Log($"Enemy changed state to: {currentState}");
     }
 
     // --- DETECTION AND COMBAT ---
 
-    // This is called when the player enters the large trigger (detection) circle
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Enemy has spotted the player!");
             playerTransform = other.transform;
-            currentState = State.CHASING;
+            ChangeState(State.CHASING);
         }
     }
 
-    // This is called when the player leaves the detection circle
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Enemy has lost the player.");
             playerTransform = null;
-            currentState = State.RETURNING; // Start returning home
+            ChangeState(State.RETURNING);
         }
     }
 
-    // This is called when the enemy's physical collider hits another collider
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.CompareTag("Player"))
@@ -123,7 +119,6 @@ public class EnemyAI : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
-                // Optional: Add a small knockback or a pause after attacking here
             }
         }
     }
