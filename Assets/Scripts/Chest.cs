@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro; // We don't need this here, but good to have for UI
 
 public class Chest : MonoBehaviour
 {
@@ -7,14 +8,16 @@ public class Chest : MonoBehaviour
     [SerializeField] private int maxCoins = 50;
 
     [Header("Interaction")]
-    [Tooltip("How close the player needs to be to open the chest.")]
     [SerializeField] private float interactionDistance = 1.5f;
-    [SerializeField] private LayerMask playerLayer; // Set this to the Player's layer
+    [SerializeField] private LayerMask playerLayer;
 
-    // State
+    [Header("Feedback")]
+    [Tooltip("The FloatingTextMesh prefab to show messages.")]
+    [SerializeField] private GameObject floatingTextPrefab;
+    [Tooltip("The vertical offset for where the text appears.")]
+    [SerializeField] private float textSpawnOffset = 1f;
+
     private bool hasBeenOpened = false;
-
-    // Components
     private Animator animator;
 
     void Start()
@@ -34,43 +37,53 @@ public class Chest : MonoBehaviour
 
     private void HandleInteraction()
     {
-        // Don't do anything if the chest has already been opened
-        if (hasBeenOpened)
-        {
-            return;
-        }
+        if (hasBeenOpened) return;
 
-        // Check for the "E" key press
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // Find all colliders on the "Player" layer within a small circle around the chest
             Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, interactionDistance, playerLayer);
-
-            // If a player was found nearby
             if (playerCollider != null)
             {
-                // We found the player, so open the chest
-                OpenChest(playerCollider.GetComponent<PlayerStats>());
+                OpenChest(playerCollider.GetComponent<PlayerStats>(), playerCollider.GetComponent<PlayerHealth>());
             }
         }
     }
 
-    private void OpenChest(PlayerStats playerStats)
+    private void OpenChest(PlayerStats playerStats, PlayerHealth playerHealth)
     {
         hasBeenOpened = true;
-        Debug.Log("Opening chest...");
+        animator.SetTrigger("Open");
 
-        if (animator != null)
+        int outcome = Random.Range(0, 99);
+
+        if (outcome >= 0 && outcome <= 69) // Get Coins
         {
-            animator.SetTrigger("Open");
-        }
-
-        int coinsToGive = Random.Range(minCoins, maxCoins + 1);
-
-        if (playerStats != null)
-        {
+            int coinsToGive = Random.Range(minCoins, maxCoins + 1);
             playerStats.AddCoins(coinsToGive);
-            Debug.Log($"Player found {coinsToGive} coins!");
+            ShowFloatingText($"Found {coinsToGive} coins!");
         }
+        else if (outcome >= 70 && outcome <= 89) // Mimic Attack
+        {
+            playerHealth.TakeDamage(1);
+            ShowFloatingText("It's a Mimic!");
+        }
+        else
+        {
+            playerHealth.IncreaseMaxHealth(1);
+            playerHealth.Heal(1);
+
+            ShowFloatingText("Max Health Increased!");
+        }
+    }
+
+    private void ShowFloatingText(string message)
+    {
+        if (floatingTextPrefab == null) return;
+
+        Vector3 spawnPosition = transform.position + new Vector3(0, textSpawnOffset, 0);
+
+        GameObject textObject = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
+
+        textObject.GetComponent<FloatingTextMesh>().SetText(message);
     }
 }

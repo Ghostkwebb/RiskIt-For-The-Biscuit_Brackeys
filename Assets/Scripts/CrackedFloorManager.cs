@@ -4,14 +4,22 @@ using UnityEngine.Tilemaps;
 
 public class CrackedFloorManager : MonoBehaviour
 {
+    public Tile crackedTileAsset { get; private set; }
+    public Tilemap crackedFloorTilemap { get; private set; }
+    public Tilemap floorTilemap { get; private set; }
+    public Tilemap holeCollisionTilemap { get; private set; }
+    public Tile holeColliderTile { get; private set; }
+
     [Header("Tilemaps")]
-    [SerializeField] private Tilemap floorTilemap;
-    [SerializeField] private Tilemap crackedFloorTilemap;
-    [SerializeField] private Tilemap holeCollisionTilemap;
+    [SerializeField] private Tilemap initialFloorTilemap;
+    [SerializeField] private Tilemap initialCrackedFloorTilemap;
+    [SerializeField] private Tilemap initialHoleCollisionTilemap;
 
     [Header("Tile Assets")]
-    [SerializeField] private Tile holeColliderTile; // The invisible tile with a collider
-    [SerializeField] private Tile normalFloorTile; // The standard floor tile to place when fixing
+    [SerializeField] private Tile initialHoleColliderTile;
+    [SerializeField] private Tile initialCrackedTileAsset;
+    [SerializeField] private Tile normalFloorTile;
+
 
     [Header("Settings")]
     [SerializeField] private int fixCost = 2;
@@ -24,6 +32,15 @@ public class CrackedFloorManager : MonoBehaviour
     // To track which tiles have been stepped on
     private HashSet<Vector3Int> steppedOnCrackedTiles = new HashSet<Vector3Int>();
     private Vector3Int lastPlayerCell;
+
+    void Awake()
+    {
+        crackedTileAsset = initialCrackedTileAsset;
+        crackedFloorTilemap = initialCrackedFloorTilemap;
+        floorTilemap = initialFloorTilemap;
+        holeCollisionTilemap = initialHoleCollisionTilemap;
+        holeColliderTile = initialHoleColliderTile;
+    }
 
     void Start()
     {

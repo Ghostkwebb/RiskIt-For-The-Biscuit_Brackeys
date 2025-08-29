@@ -7,69 +7,102 @@ public class ConvergingEnemyAI : MonoBehaviour
 {
     [Header("Combat")]
     [SerializeField] private int damage = 1;
+    [SerializeField] private float attackCooldown = 2f;
+    private float lastAttackTime = -999f;
 
-    // References
+    // --- NEW REFERENCE ---
+    [Header("Visuals")]
+    [Tooltip("Drag the child 'Visuals' object here.")]
+    [SerializeField] private Transform visualsTransform;
+
     private Transform playerTransform;
     private Seeker seeker;
     private AIPath aiPath;
+    private Animator animator;
+    // We no longer need a direct reference to the SpriteRenderer
 
     void Start()
     {
         Initialize();
     }
 
+    void Update()
+    {
+        UpdateAnimationAndVisuals();
+    }
+
     private void Initialize()
     {
-        // Get the A* components
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
 
-        // Find the player's transform to set as the target
+        // The animator is now on the child object
+        if (visualsTransform != null)
+        {
+            animator = visualsTransform.GetComponent<Animator>();
+        }
+
         playerTransform = FindFirstObjectByType<PlayerMovement>().transform;
 
-        // Tell the AIPath component what to follow
         if (playerTransform != null)
         {
             aiPath.destination = playerTransform.position;
         }
 
-        // Start calculating paths repeatedly
         InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
     }
 
-    // This method is called repeatedly to find the best path to the player
+    private void UpdateAnimationAndVisuals()
+    {
+        bool isMoving = aiPath.desiredVelocity.sqrMagnitude > 0.1f;
+        animator.SetBool("isMoving", isMoving);
+
+        // --- THE FLIPPING LOGIC IS HERE ---
+        float moveX = aiPath.desiredVelocity.x;
+        if (moveX < -0.1f)
+        {
+            // Moving left: flip the visuals by setting X scale to -1
+            visualsTransform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else if (moveX > 0.1f)
+        {
+            // Moving right: set scale back to normal
+            visualsTransform.localScale = new Vector3(1f, 1f, 1f);
+        }
+    }
+
     private void UpdatePath()
     {
-        // If the seeker is ready and we have a target, calculate a new path
         if (seeker.IsDone() && playerTransform != null)
         {
             seeker.StartPath(transform.position, playerTransform.position, OnPathComplete);
         }
     }
 
-    // A callback function that runs when the path has been calculated
     private void OnPathComplete(Path p)
     {
-        // If there was an error in path calculation, you can handle it here
         if (p.error)
         {
             Debug.LogError(p.errorLog);
         }
     }
 
-    // We no longer need our own movement logic in FixedUpdate.
-    // The AIPath component handles it automatically.
-
-    // --- COMBAT ---
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Player"))
+        if (other.collider.CompareTag("Player") && Time.time > lastAttackTime + attackCooldown)
         {
-            PlayerHealth playerHealth = other.collider.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
+            Attack(other.collider.GetComponent<PlayerHealth>());
+        }
+    }
+
+    private void Attack(PlayerHealth playerHealth)
+    {
+        lastAttackTime = Time.time;
+        animator.SetTrigger("Attack");
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
         }
     }
 }
