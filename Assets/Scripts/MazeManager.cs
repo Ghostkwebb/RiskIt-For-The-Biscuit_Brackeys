@@ -30,7 +30,7 @@ public class MazeManager : MonoBehaviour
 
     public void BlockPathBehindPlayer()
     {
-        Vector2 behindDirection = -playerMovement.lastMovementDirection;
+        Vector2 behindDirection = -playerMovement.lastCardinalDirection;
         Vector3Int behindCellDirection = new Vector3Int(Mathf.RoundToInt(behindDirection.x), Mathf.RoundToInt(behindDirection.y), 0);
 
         Vector3Int perpendicularDirection = (Mathf.Abs(behindDirection.y) > 0)

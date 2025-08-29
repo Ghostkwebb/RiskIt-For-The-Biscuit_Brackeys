@@ -88,7 +88,7 @@ public class CrackedFloorManager : MonoBehaviour
             return;
         }
 
-        Vector3Int targetCell = holeCollisionTilemap.WorldToCell(playerTransform.position + (Vector3)playerMovement.lastMovementDirection);
+        Vector3Int targetCell = holeCollisionTilemap.WorldToCell(playerTransform.position + (Vector3)playerMovement.lastCardinalDirection);
 
         // Check if there is a hole at the target location
         if (holeCollisionTilemap.GetTile(targetCell) != null)

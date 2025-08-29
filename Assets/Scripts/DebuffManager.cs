@@ -17,6 +17,7 @@ public class DebuffManager : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerVision playerVision;
     private MazeManager mazeManager;
+    private TeleportManager teleportManager;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class DebuffManager : MonoBehaviour
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         playerVision = FindFirstObjectByType<PlayerVision>();
         mazeManager = FindFirstObjectByType<MazeManager>();
+        teleportManager = FindFirstObjectByType<TeleportManager>();
     }
 
     public void TryApplyRandomDebuff()
@@ -44,27 +46,29 @@ public class DebuffManager : MonoBehaviour
 
     private void ApplyRandomDebuff()
     {
-        // Increase the range to include the new debuff (0, 1, 2, or 3)
-        int debuffType = Random.Range(0, 4);
+        int debuffType = Random.Range(0, 5);
 
-        if (debuffType == 0)
+        switch (debuffType)
         {
-            Debug.Log($"Applying Speed Debuff!");
-            playerMovement.ReduceSpeed(speedReductionAmount);
-        }
-        else if (debuffType == 1)
-        {
-            Debug.Log($"Applying Vision Debuff!");
-            playerVision.ReduceVision(visionReductionAmount);
-        }
-        else if (debuffType == 2)
-        {
-            mazeManager.BlockPathBehindPlayer();
-        }
-        else // debuffType == 3
-        {
-            // Call the new debuff logic from our CoinDrainController
-            coinDrainController.ActivateDebuff();
+            case 0:
+                Debug.Log("Applying Speed Debuff!");
+                playerMovement.ReduceSpeed(speedReductionAmount);
+                break;
+            case 1:
+                Debug.Log("Applying Vision Debuff!");
+                playerVision.ReduceVision(visionReductionAmount);
+                break;
+            case 2:
+                mazeManager.BlockPathBehindPlayer();
+                break;
+            case 3:
+                coinDrainController.ActivateDebuff();
+                break;
+            case 4:
+                // --- CALL THE NEW DEBUFF ---
+                Debug.Log("Applying Teleport Debuff!");
+                teleportManager.TeleportPlayerRandomly();
+                break;
         }
     }
 

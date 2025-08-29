@@ -11,6 +11,11 @@ public class EnemyAI : MonoBehaviour
     [Header("Combat")]
     [SerializeField] private int damage = 1;
 
+    [Header("Visuals")]
+    [SerializeField] private Color aggroColor = Color.red;
+
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private enum State { IDLE, CHASING, RETURNING }
     private State currentState;
@@ -21,6 +26,8 @@ public class EnemyAI : MonoBehaviour
     private Seeker seeker;
     private AIPath aiPath;
 
+    private Vector2 lastDirection = new Vector2(0, -1);
+
     void Start()
     {
         Initialize();
@@ -30,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     {
         // We use Update for state checks that don't involve physics.
         HandleStateChecks();
+        UpdateAnimation();
     }
 
     private void Initialize()
@@ -37,12 +45,35 @@ public class EnemyAI : MonoBehaviour
         startPosition = transform.position;
         currentState = State.IDLE;
 
-        // Get the A* components
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
 
-        // Disable the AIPath component initially. We only want it active when chasing or returning.
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
         aiPath.canMove = false;
+
+        // --- Set initial facing direction in the animator ---
+        animator.SetFloat("moveX", lastDirection.x);
+        animator.SetFloat("moveY", lastDirection.y);
+    }
+
+    private void UpdateAnimation()
+    {
+        // 1. Determine if the AI is actively moving.
+        bool isMoving = aiPath.canMove && !aiPath.reachedEndOfPath && aiPath.desiredVelocity.sqrMagnitude > 0.1f;
+        animator.SetBool("isMoving", isMoving);
+
+        // 2. If the AI is moving, update its last known direction.
+        if (isMoving)
+        {
+            lastDirection = aiPath.desiredVelocity.normalized;
+        }
+
+        // 3. Set the Animator parameters based on the last known direction, REGARDLESS of whether it is moving or not.
+        // This ensures the enemy keeps facing the correct way when it stops.
+        animator.SetFloat("moveX", lastDirection.x);
+        animator.SetFloat("moveY", lastDirection.y);
     }
 
     // This method decides WHEN to change state.
@@ -53,12 +84,14 @@ public class EnemyAI : MonoBehaviour
             case State.IDLE:
                 // If we become idle, stop moving.
                 aiPath.canMove = false;
+                spriteRenderer.color = Color.white;
                 break;
 
             case State.CHASING:
                 // If we are chasing, make sure we are moving and have a target.
                 aiPath.canMove = true;
                 aiPath.destination = playerTransform.position;
+                spriteRenderer.color = aggroColor;
 
                 // Check if we should stop chasing (leash distance).
                 if (Vector2.Distance(transform.position, startPosition) > leashDistance)
@@ -71,6 +104,7 @@ public class EnemyAI : MonoBehaviour
                 // If we are returning, make sure we are moving towards our start point.
                 aiPath.canMove = true;
                 aiPath.destination = startPosition;
+                spriteRenderer.color = Color.white;
 
                 // Check if we have arrived home.
                 // aiPath.reachedEndOfPath is a handy property for this.
@@ -115,6 +149,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.collider.CompareTag("Player"))
         {
+            // animator.SetTrigger("Attack"); // We will add this when we set up attack animations
             PlayerHealth playerHealth = other.collider.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {

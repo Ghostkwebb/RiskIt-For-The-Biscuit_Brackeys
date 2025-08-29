@@ -27,32 +27,25 @@ public class WallBreaker : MonoBehaviour
 
     private void BreakWallInFront()
     {
-        // First, check if we have enough coins
         if (playerStats.coinCount < coinCost)
         {
             Debug.Log("Not enough coins to break a wall!");
             return;
         }
 
-        // Determine the target position in front of the player
-        Vector3 playerPosition = transform.position;
-        Vector3 direction = playerMovement.lastMovementDirection;
+        // --- THIS IS THE FIX ---
+        // Change lastMovementDirection to lastCardinalDirection
+        Vector3 direction = playerMovement.lastCardinalDirection;
 
-        // Get the cell of the first tile to break
-        Vector3Int targetCell1 = wallTilemap.WorldToCell(playerPosition + direction);
+        Vector3Int targetCell1 = wallTilemap.WorldToCell(transform.position + direction);
+        Vector3Int targetCell2 = wallTilemap.WorldToCell(transform.position + direction * 2);
 
-        // Get the cell of the second tile (since the wall is 2 tiles thick)
-        Vector3Int targetCell2 = wallTilemap.WorldToCell(playerPosition + direction * 2);
-
-        // Check if there is actually a tile at the target locations
         if (wallTilemap.GetTile(targetCell1) != null || wallTilemap.GetTile(targetCell2) != null)
         {
-            // If there's a wall, spend the coins and break it
             if (playerStats.UseCoins(coinCost))
             {
-                Debug.Log("Breaking wall!");
-                wallTilemap.SetTile(targetCell1, null); // Remove the first tile
-                wallTilemap.SetTile(targetCell2, null); // Remove the second tile
+                wallTilemap.SetTile(targetCell1, null);
+                wallTilemap.SetTile(targetCell2, null);
             }
         }
         else

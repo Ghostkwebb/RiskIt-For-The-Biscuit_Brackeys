@@ -4,11 +4,10 @@ using UnityEngine.Rendering.Universal;
 public class PlayerVision : MonoBehaviour
 {
     [Header("Vision Components")]
-    [Tooltip("Drag the 'LightPivot' object FROM THE HIERARCHY here.")]
     [SerializeField] private Transform lightPivot;
 
-    private Rigidbody2D rb;
-    private Vector3 mousePosition;
+    // We need a reference to the movement script to know which way to face.
+    private PlayerMovement playerMovement;
 
     // Debuff variables
     [SerializeField] private float minVisionAngle = 10f;
@@ -20,20 +19,19 @@ public class PlayerVision : MonoBehaviour
         Initialize();
     }
 
-    void Update()
-    {
-        HandleInput();
-    }
+    // We no longer need Update for input.
+    // void Update() { }
 
     void LateUpdate()
     {
-        UpdateLightPivotTransform();
+        HandleRotation();
     }
 
     private void Initialize()
     {
-        rb = GetComponent<Rigidbody2D>();
-        // We still get the light from the children of the pivot for the debuff logic
+        // Get the PlayerMovement component from this same GameObject.
+        playerMovement = GetComponent<PlayerMovement>();
+
         if (lightPivot != null)
         {
             visionLight = lightPivot.GetComponentInChildren<Light2D>();
@@ -44,22 +42,12 @@ public class PlayerVision : MonoBehaviour
         }
     }
 
-    private void HandleInput()
-    {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-
-    // This method now handles BOTH position and rotation in the correct order.
-    private void UpdateLightPivotTransform()
+    private void HandleRotation()
     {
         if (lightPivot == null) return;
 
-        lightPivot.position = rb.position;
+        Vector2 direction = playerMovement.lastCardinalDirection;
 
-        Vector2 direction = new Vector2(
-            mousePosition.x - rb.position.x,
-            mousePosition.y - rb.position.y
-        );
         lightPivot.up = direction;
     }
 
