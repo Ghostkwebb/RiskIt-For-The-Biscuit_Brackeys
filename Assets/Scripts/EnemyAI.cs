@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Combat")]
     [SerializeField] private int damage = 1;
+    [SerializeField] private float attackCooldown = 1.5f; // Time between attacks
+    private float lastAttackTime = -999f; // Time when the last attack occurred
 
     [Header("Visuals")]
     [SerializeField] private Color aggroColor = Color.red;
@@ -147,14 +149,24 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Player"))
+        if (other.collider.CompareTag("Player") && Time.time > lastAttackTime + attackCooldown)
         {
-            // animator.SetTrigger("Attack"); // We will add this when we set up attack animations
-            PlayerHealth playerHealth = other.collider.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-            }
+            Attack(other.collider.GetComponent<PlayerHealth>());
+        }
+    }
+
+    private void Attack(PlayerHealth playerHealth)
+    {
+        Debug.Log("Enemy is attacking the player!");
+
+        lastAttackTime = Time.time;
+
+        animator.SetTrigger("Attack");
+
+        // Damage the player
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
         }
     }
 }

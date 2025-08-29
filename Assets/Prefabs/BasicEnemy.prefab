@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4465040602401510384}
   - component: {fileID: 5730149028230025815}
   - component: {fileID: 8995824318085583863}
-  - component: {fileID: 5622768962598786280}
+  - component: {fileID: 1043500194189121263}
   - component: {fileID: -4816635073668731479}
   - component: {fileID: 4444509692231486593}
-  - component: {fileID: 1043500194189121263}
+  - component: {fileID: 5622768962598786280}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -203,20 +203,28 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 4
---- !u!114 &5622768962598786280
-MonoBehaviour:
+--- !u!95 &1043500194189121263
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6750612132173838330}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7e7696ab01140df9d4f8f92698125d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leashDistance: 20
-  damage: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e788782aa643444ca4ed258730018f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &-4816635073668731479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,25 +295,19 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!95 &1043500194189121263
-Animator:
-  serializedVersion: 7
+--- !u!114 &5622768962598786280
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6750612132173838330}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e788782aa643444ca4ed258730018f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7e7696ab01140df9d4f8f92698125d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leashDistance: 20
+  damage: 1
+  attackCooldown: 1.5
+  aggroColor: {r: 1, g: 0, b: 0, a: 1}
