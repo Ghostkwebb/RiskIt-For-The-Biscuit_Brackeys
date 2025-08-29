@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoins: 0
   maxCoins: 50
-  interactionDistance: 1.5
+  interactionDistance: 1.2
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
