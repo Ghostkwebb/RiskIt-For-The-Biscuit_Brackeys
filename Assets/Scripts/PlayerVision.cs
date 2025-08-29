@@ -3,37 +3,72 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerVision : MonoBehaviour
 {
-    private Light2D visionLight;
+    [Header("Vision Components")]
+    [Tooltip("Drag the 'LightPivot' object FROM THE HIERARCHY here.")]
+    [SerializeField] private Transform lightPivot;
+
+    private Rigidbody2D rb;
     private Vector3 mousePosition;
 
+    // Debuff variables
     [SerializeField] private float minVisionAngle = 10f;
     private float initialVisionAngle;
+    private Light2D visionLight;
 
     void Start()
     {
-        visionLight = GetComponentInChildren<Light2D>();
-        if (visionLight != null)
-        {
-            initialVisionAngle = visionLight.pointLightOuterAngle;
-        }
+        Initialize();
     }
 
     void Update()
     {
-        GetMousePosition();
+        HandleInput();
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
-        LightCone();
+        UpdateLightPivotTransform();
     }
 
+    private void Initialize()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        // We still get the light from the children of the pivot for the debuff logic
+        if (lightPivot != null)
+        {
+            visionLight = lightPivot.GetComponentInChildren<Light2D>();
+            if (visionLight != null)
+            {
+                initialVisionAngle = visionLight.pointLightOuterAngle;
+            }
+        }
+    }
+
+    private void HandleInput()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    // This method now handles BOTH position and rotation in the correct order.
+    private void UpdateLightPivotTransform()
+    {
+        if (lightPivot == null) return;
+
+        lightPivot.position = rb.position;
+
+        Vector2 direction = new Vector2(
+            mousePosition.x - rb.position.x,
+            mousePosition.y - rb.position.y
+        );
+        lightPivot.up = direction;
+    }
+
+    // Debuff methods remain unchanged
     public void ReduceVision(float amount)
     {
         if (visionLight != null)
         {
             visionLight.pointLightOuterAngle -= amount;
-            // Clamp the angle so it doesn't get too small
             if (visionLight.pointLightOuterAngle < minVisionAngle)
             {
                 visionLight.pointLightOuterAngle = minVisionAngle;
@@ -47,26 +82,6 @@ public class PlayerVision : MonoBehaviour
         {
             Debug.Log("Vision has been reset!");
             visionLight.pointLightOuterAngle = initialVisionAngle;
-        }
-    }
-
-    private void GetMousePosition()
-    {
-        // Get the mouse position in world space
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-
-    private void LightCone()
-    {
-        // Rotate the vision cone to face the mouse cursor
-        if (visionLight != null)
-        {
-            Vector2 direction = new Vector2(
-                mousePosition.x - transform.position.x,
-                mousePosition.y - transform.position.y
-            );
-
-            transform.up = direction;
         }
     }
 }
