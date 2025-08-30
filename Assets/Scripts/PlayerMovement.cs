@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    private AudioSource walkingAudioSource;
 
 
     public Vector2 lastCardinalDirection { get; private set; } = Vector2.down;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        walkingAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -54,8 +56,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        // We no longer need to normalize here, as the input handling does it.
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (movement.sqrMagnitude > 0.1f && !walkingAudioSource.isPlaying)
+        {
+            walkingAudioSource.Play();
+        }
+        else if (movement.sqrMagnitude < 0.1f && walkingAudioSource.isPlaying)
+        {
+            walkingAudioSource.Stop();
+        }
     }
 
     public void ReduceSpeed(float amount)

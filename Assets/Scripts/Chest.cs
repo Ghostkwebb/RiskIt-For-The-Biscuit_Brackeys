@@ -58,17 +58,20 @@ public class Chest : MonoBehaviour
 
         if (outcome >= 0 && outcome <= 69) // Get Coins
         {
+            AudioManager.Instance.PlaySFX("treasureChest_coin");
             int coinsToGive = Random.Range(minCoins, maxCoins + 1);
             playerStats.AddCoins(coinsToGive);
             ShowFloatingText($"Found {coinsToGive} coins!");
         }
         else if (outcome >= 70 && outcome <= 89) // Mimic Attack
         {
+            AudioManager.Instance.PlaySFX("treasureChest_mimic");
             playerHealth.TakeDamage(1);
             ShowFloatingText("It's a Mimic!");
         }
         else
         {
+            AudioManager.Instance.PlaySFX("treasureChest_health");
             playerHealth.IncreaseMaxHealth(1);
             playerHealth.Heal(1);
 

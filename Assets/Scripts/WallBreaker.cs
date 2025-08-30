@@ -46,6 +46,7 @@ public class WallBreaker : MonoBehaviour
 
     private void BreakWallInFront()
     {
+
         if (playerStats.coinCount < coinCost)
         {
             Debug.Log("Not enough coins to break a wall!");
@@ -62,7 +63,7 @@ public class WallBreaker : MonoBehaviour
             if (playerStats.UseCoins(coinCost))
             {
                 Debug.Log("Breaking wall and placing floor!");
-
+                AudioManager.Instance.PlaySFX("wall_breaking");
 
                 // Position 1
                 wallTilemap.SetTile(targetCell1, null);

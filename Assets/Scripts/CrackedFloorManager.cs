@@ -94,6 +94,8 @@ public class CrackedFloorManager : MonoBehaviour
 
         // Remove the cell from the set so it's no longer tracked
         steppedOnCrackedTiles.Remove(cell);
+
+        AudioManager.Instance.PlaySFX("floor_breaking");
     }
 
     void FixTileInFront()
@@ -113,11 +115,9 @@ public class CrackedFloorManager : MonoBehaviour
             if (playerStats.UseCoins(fixCost))
             {
                 Debug.Log($"Fixing hole at {targetCell}");
-                // Remove the invisible collider
+                AudioManager.Instance.PlaySFX("floor_fixing");
                 holeCollisionTilemap.SetTile(targetCell, null);
-                // Add a normal floor tile back to the main floor
                 floorTilemap.SetTile(targetCell, normalFloorTile);
-                // Also remove it here to be absolutely sure
                 steppedOnCrackedTiles.Remove(targetCell);
             }
         }

@@ -29,10 +29,8 @@ public class TeleportManager : MonoBehaviour
         Vector3 teleportPosition = Vector3.zero;
         bool positionFound = false;
 
-        // 1. Get the player's current node just once before the loop.
         GraphNode startNode = AstarPath.active.GetNearest(playerTransform.position).node;
 
-        // If the player is somehow not on a valid node, we can't teleport.
         if (startNode == null)
         {
             Debug.LogError("Player is not on a valid pathfinding node. Cannot teleport.");
@@ -61,6 +59,7 @@ public class TeleportManager : MonoBehaviour
         if (positionFound)
         {
             Debug.Log($"Teleporting player to {teleportPosition}");
+            AudioManager.Instance.PlaySFX("teleport_debuff");
             playerTransform.position = teleportPosition;
         }
         else

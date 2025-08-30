@@ -16,6 +16,10 @@ public class EnemyAI : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] private Color aggroColor = Color.red;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource walkAudioSource;
+    [SerializeField] private AudioSource chaseAudioSource;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
@@ -23,6 +27,7 @@ public class EnemyAI : MonoBehaviour
     private State currentState;
     private Transform playerTransform;
     private Vector3 startPosition;
+
 
     // --- A* Component References ---
     private Seeker seeker;
@@ -62,20 +67,27 @@ public class EnemyAI : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        // 1. Determine if the AI is actively moving.
         bool isMoving = aiPath.canMove && !aiPath.reachedEndOfPath && aiPath.desiredVelocity.sqrMagnitude > 0.1f;
         animator.SetBool("isMoving", isMoving);
 
-        // 2. If the AI is moving, update its last known direction.
         if (isMoving)
         {
             lastDirection = aiPath.desiredVelocity.normalized;
         }
 
-        // 3. Set the Animator parameters based on the last known direction, REGARDLESS of whether it is moving or not.
-        // This ensures the enemy keeps facing the correct way when it stops.
         animator.SetFloat("moveX", lastDirection.x);
         animator.SetFloat("moveY", lastDirection.y);
+
+        if (isMoving && !walkAudioSource.isPlaying)
+        {
+            walkAudioSource.Play();
+            chaseAudioSource.Play();
+        }
+        else if (!isMoving && walkAudioSource.isPlaying)
+        {
+            walkAudioSource.Stop();
+            chaseAudioSource.Stop();
+        }
     }
 
     // This method decides WHEN to change state.
@@ -84,18 +96,15 @@ public class EnemyAI : MonoBehaviour
         switch (currentState)
         {
             case State.IDLE:
-                // If we become idle, stop moving.
                 aiPath.canMove = false;
                 spriteRenderer.color = Color.white;
                 break;
 
             case State.CHASING:
-                // If we are chasing, make sure we are moving and have a target.
                 aiPath.canMove = true;
                 aiPath.destination = playerTransform.position;
                 spriteRenderer.color = aggroColor;
 
-                // Check if we should stop chasing (leash distance).
                 if (Vector2.Distance(transform.position, startPosition) > leashDistance)
                 {
                     ChangeState(State.RETURNING);
@@ -103,13 +112,10 @@ public class EnemyAI : MonoBehaviour
                 break;
 
             case State.RETURNING:
-                // If we are returning, make sure we are moving towards our start point.
                 aiPath.canMove = true;
                 aiPath.destination = startPosition;
                 spriteRenderer.color = Color.white;
 
-                // Check if we have arrived home.
-                // aiPath.reachedEndOfPath is a handy property for this.
                 if (aiPath.reachedEndOfPath)
                 {
                     ChangeState(State.IDLE);
@@ -162,6 +168,8 @@ public class EnemyAI : MonoBehaviour
         lastAttackTime = Time.time;
 
         animator.SetTrigger("Attack");
+
+        AudioManager.Instance.PlaySFX("basic_enemy_attack");
 
         // Damage the player
         if (playerHealth != null)

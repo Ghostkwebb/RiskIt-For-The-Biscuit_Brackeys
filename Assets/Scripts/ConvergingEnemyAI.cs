@@ -2,24 +2,23 @@ using UnityEngine;
 using Pathfinding;
 
 [RequireComponent(typeof(Seeker))]
-[RequireComponent(typeof(AIPath))]
+[RequireComponent(typeof(AIPath))] // Or RichAI
 public class ConvergingEnemyAI : MonoBehaviour
 {
+    [Header("Components")]
+    [Tooltip("Drag the child object that contains the visuals (Sprite Renderer, Animator) here.")]
+    public GameObject bodyObject;
+
     [Header("Combat")]
     [SerializeField] private int damage = 1;
     [SerializeField] private float attackCooldown = 2f;
     private float lastAttackTime = -999f;
 
-    // --- NEW REFERENCE ---
-    [Header("Visuals")]
-    [Tooltip("Drag the child 'Visuals' object here.")]
-    [SerializeField] private Transform visualsTransform;
-
     private Transform playerTransform;
     private Seeker seeker;
     private AIPath aiPath;
     private Animator animator;
-    // We no longer need a direct reference to the SpriteRenderer
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -35,11 +34,11 @@ public class ConvergingEnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
+        audioSource = GetComponent<AudioSource>();
 
-        // The animator is now on the child object
-        if (visualsTransform != null)
+        if (bodyObject != null)
         {
-            animator = visualsTransform.GetComponent<Animator>();
+            animator = bodyObject.GetComponent<Animator>();
         }
 
         playerTransform = FindFirstObjectByType<PlayerMovement>().transform;
@@ -54,21 +53,31 @@ public class ConvergingEnemyAI : MonoBehaviour
 
     private void UpdateAnimationAndVisuals()
     {
-        bool isMoving = aiPath.desiredVelocity.sqrMagnitude > 0.1f;
-        animator.SetBool("isMoving", isMoving);
+        if (bodyObject == null) return;
 
-        // --- THE FLIPPING LOGIC IS HERE ---
+        bool isMoving = aiPath.desiredVelocity.sqrMagnitude > 0.1f;
+        if (animator != null) animator.SetBool("isMoving", isMoving);
+
         float moveX = aiPath.desiredVelocity.x;
         if (moveX < -0.1f)
         {
-            // Moving left: flip the visuals by setting X scale to -1
-            visualsTransform.localScale = new Vector3(-1f, 1f, 1f);
+            bodyObject.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else if (moveX > 0.1f)
         {
-            // Moving right: set scale back to normal
-            visualsTransform.localScale = new Vector3(1f, 1f, 1f);
+            bodyObject.transform.localScale = new Vector3(1f, 1f, 1f);
         }
+
+        if (isMoving && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        // If the enemy is NOT moving but the sound IS playing, stop it.
+        else if (!isMoving && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+
     }
 
     private void UpdatePath()
@@ -99,7 +108,7 @@ public class ConvergingEnemyAI : MonoBehaviour
     {
         lastAttackTime = Time.time;
         animator.SetTrigger("Attack");
-
+        AudioManager.Instance.PlaySFX("special_enemy_attack");
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);

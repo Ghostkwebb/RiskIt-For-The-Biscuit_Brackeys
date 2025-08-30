@@ -19,6 +19,7 @@ public class Mine : MonoBehaviour
 
     private bool hasBeenTriggered = false;
     private Animator animator;
+    private AudioSource tickingSource;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class Mine : MonoBehaviour
     private void InitializeReferences()
     {
         animator = GetComponent<Animator>();
+        tickingSource = GetComponent<AudioSource>();
         CrackedFloorManager floorManager = FindFirstObjectByType<CrackedFloorManager>();
         if (floorManager != null)
         {
@@ -58,22 +60,29 @@ public class Mine : MonoBehaviour
     {
         Debug.Log("Mine has been triggered! Countdown started...");
 
-        // Optional: Speed up the ticking animation to give a visual warning
         if (animator != null)
         {
             animator.speed = 3.0f;
         }
 
+        if (tickingSource != null)
+        {
+            tickingSource.pitch = 2.5f;
+        }
+
         // Wait for the specified delay
         yield return new WaitForSeconds(triggerDelay);
 
-        // --- EXPLOSION LOGIC ---
         Explode();
     }
 
     private void Explode()
     {
-        Debug.Log("BOOM!");
+        if (tickingSource != null)
+        {
+            tickingSource.Stop();
+        }
+        AudioManager.Instance.PlaySFX("mine_explosion");
 
         // --- VISUAL AND TERRAIN EFFECTS ---
         Vector3 explosionCenter = transform.position;

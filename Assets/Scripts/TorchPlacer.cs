@@ -18,7 +18,7 @@ public class TorchPlacer : MonoBehaviour
 
     // References to other components on the player
     private Transform playerTransform;
-    private PlayerStats playerStats; // --- NEW: Reference to player's stats
+    private PlayerStats playerStats;
 
     void Start()
     {
@@ -35,7 +35,6 @@ public class TorchPlacer : MonoBehaviour
     {
         playerTransform = transform;
 
-        // --- NEW: Get the PlayerStats component ---
         playerStats = GetComponent<PlayerStats>();
         if (playerStats == null)
         {
@@ -79,32 +78,17 @@ public class TorchPlacer : MonoBehaviour
         previewRenderer.color = IsValidPlacement(snappedPosition) ? Color.white : Color.red;
     }
 
-    // --- THIS IS THE UPDATED METHOD ---
     private void HandlePlacement()
     {
-        // First, check if the placement location is valid
-        if (!IsValidPlacement(torchPreview.transform.position))
+        if (IsValidPlacement(torchPreview.transform.position))
         {
-            Debug.Log("Cannot place torch here!");
-            return; // Exit the method early
-        }
-
-        // NEW: Now, check if the player can afford the torch
-        if (playerStats.UseCoins(torchCost))
-        {
-            // If UseCoins returns true, the player had enough and the cost has been deducted
-            Debug.Log($"Placed torch! Spent {torchCost} coins.");
-            Instantiate(torchPrefab, torchPreview.transform.position, Quaternion.identity);
-
-            // Hide the preview after a successful placement
-            isPreviewActive = false;
-            torchPreview.SetActive(false);
-        }
-        else
-        {
-            // If UseCoins returns false, the player did not have enough coins
-            Debug.Log($"Not enough coins to place a torch! Need {torchCost}.");
-            // Here you could add a UI message or a sound effect for "can't afford"
+            if (playerStats.UseCoins(torchCost))
+            {
+                Instantiate(torchPrefab, torchPreview.transform.position, Quaternion.identity);
+                AudioManager.Instance.PlaySFX("torch_place");
+                isPreviewActive = false;
+                torchPreview.SetActive(false);
+            }
         }
     }
 

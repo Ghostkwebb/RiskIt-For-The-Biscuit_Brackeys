@@ -3,16 +3,15 @@ using UnityEngine;
 public class SpecialEnemyManager : MonoBehaviour
 {
     [Header("Activation")]
-    [Tooltip("The number of coins the player needs to activate the enemy.")]
     [SerializeField] private int coinThreshold = 2;
 
-    [Header("References")]
-    [Tooltip("Drag the ConvergingEnemy from your scene here.")]
-    [SerializeField] private GameObject convergingEnemy;
+    [Header("Enemy References")]
+    [Tooltip("Drag all ConvergingEnemy instances from the Hierarchy into this list.")]
+    [SerializeField] private ConvergingEnemyAI[] convergingEnemies;
 
-    // We need to store the enemy's starting position to send it back.
-    private Vector3 enemyStartPosition;
+    private Vector3[] enemyStartPositions;
     private PlayerStats playerStats;
+    private bool enemiesAreActive = false;
 
     void Start()
     {
@@ -27,46 +26,60 @@ public class SpecialEnemyManager : MonoBehaviour
     private void Initialize()
     {
         playerStats = FindFirstObjectByType<PlayerStats>();
-        if (convergingEnemy != null)
+
+        // Store the starting positions and then disable the entire enemy GameObject.
+        enemyStartPositions = new Vector3[convergingEnemies.Length];
+        for (int i = 0; i < convergingEnemies.Length; i++)
         {
-            // Store the starting position before disabling it.
-            enemyStartPosition = convergingEnemy.transform.position;
-            convergingEnemy.SetActive(false);
+            if (convergingEnemies[i] == null) continue;
+
+            enemyStartPositions[i] = convergingEnemies[i].transform.position;
+            convergingEnemies[i].gameObject.SetActive(false); // Disable the whole object
         }
     }
 
     private void CheckActivationCondition()
     {
-        // If we don't have the necessary references, do nothing.
-        if (playerStats == null || convergingEnemy == null)
+        if (playerStats == null) return;
+
+        if (playerStats.coinCount >= coinThreshold)
         {
-            return;
+            if (!enemiesAreActive)
+            {
+                ActivateAllEnemies();
+            }
         }
-
-
-        if (playerStats.coinCount >= coinThreshold && !convergingEnemy.activeSelf)
+        else
         {
-            ActivateEnemy();
-        }
-
-        else if (playerStats.coinCount < coinThreshold && convergingEnemy.activeSelf)
-        {
-            DeactivateEnemy();
+            if (enemiesAreActive)
+            {
+                DeactivateAllEnemies();
+            }
         }
     }
 
-    private void ActivateEnemy()
+    private void ActivateAllEnemies()
     {
-        Debug.Log("Coin threshold reached! The special enemy is now hunting you!");
-        convergingEnemy.SetActive(true);
+        enemiesAreActive = true;
+        foreach (ConvergingEnemyAI enemy in convergingEnemies)
+        {
+            if (enemy != null)
+            {
+                enemy.gameObject.SetActive(true); // Enable the whole object
+            }
+        }
     }
 
-    private void DeactivateEnemy()
+    private void DeactivateAllEnemies()
     {
-        Debug.Log("Player is no longer a high-value target. Enemy is retreating.");
-        // Deactivate the enemy GameObject.
-        convergingEnemy.SetActive(false);
-        // Reset its position back to the start for the next time it activates.
-        convergingEnemy.transform.position = enemyStartPosition;
+        enemiesAreActive = false;
+        for (int i = 0; i < convergingEnemies.Length; i++)
+        {
+            if (convergingEnemies[i] == null) continue;
+
+            // Before disabling, reset its position
+            convergingEnemies[i].transform.position = enemyStartPositions[i];
+            convergingEnemies[i].gameObject.SetActive(false); // Disable the whole object
+        }
     }
 }

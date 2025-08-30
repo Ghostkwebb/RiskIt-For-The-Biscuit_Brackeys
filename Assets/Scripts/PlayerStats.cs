@@ -17,8 +17,8 @@ public class PlayerStats : MonoBehaviour
     public void AddCoins(int amount)
     {
         coinCount += amount;
-        Debug.Log($"Collected a coin! Total coins: {coinCount}");
         UpdateCoinUI();
+        AudioManager.Instance.PlaySFX("coin_get");
     }
 
     // Call this to try and spend coins
@@ -27,8 +27,8 @@ public class PlayerStats : MonoBehaviour
         if (coinCount >= amount)
         {
             coinCount -= amount;
-            Debug.Log($"Spent {amount} coins. Remaining: {coinCount}");
             UpdateCoinUI();
+            AudioManager.Instance.PlaySFX("coin_use");
             return true; // Success
         }
 
