@@ -1,23 +1,42 @@
 using UnityEngine;
-using UnityEngine.Tilemaps; // Required for Tilemap operations
+using UnityEngine.Tilemaps;
 
 public class WallBreaker : MonoBehaviour
 {
     [Header("Wall Breaking Settings")]
     [SerializeField] private int coinCost = 2;
+
+    [Header("Tilemap References")]
+    [Tooltip("The tilemap that contains the walls.")]
     [SerializeField] private Tilemap wallTilemap;
 
-    // References to other components on the player
+    [Tooltip("The tilemap where floor tiles should be placed.")]
+    [SerializeField] private Tilemap floorTilemap;
+
+    [Tooltip("The actual floor tile asset to place.")]
+    [SerializeField] private TileBase floorTileAsset;
+
+    // References
     private PlayerStats playerStats;
     private PlayerMovement playerMovement;
 
     void Start()
     {
+        Initialize();
+    }
+
+    void Update()
+    {
+        HandleInteraction();
+    }
+
+    private void Initialize()
+    {
         playerStats = GetComponent<PlayerStats>();
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    void Update()
+    private void HandleInteraction()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -33,19 +52,25 @@ public class WallBreaker : MonoBehaviour
             return;
         }
 
-        // --- THIS IS THE FIX ---
-        // Change lastMovementDirection to lastCardinalDirection
         Vector3 direction = playerMovement.lastCardinalDirection;
-
         Vector3Int targetCell1 = wallTilemap.WorldToCell(transform.position + direction);
         Vector3Int targetCell2 = wallTilemap.WorldToCell(transform.position + direction * 2);
 
-        if (wallTilemap.GetTile(targetCell1) != null || wallTilemap.GetTile(targetCell2) != null)
+        // We only need to check if the first layer of wall exists to proceed
+        if (wallTilemap.GetTile(targetCell1) != null)
         {
             if (playerStats.UseCoins(coinCost))
             {
+                Debug.Log("Breaking wall and placing floor!");
+
+
+                // Position 1
                 wallTilemap.SetTile(targetCell1, null);
+                floorTilemap.SetTile(targetCell1, floorTileAsset);
+
+                // Position 2
                 wallTilemap.SetTile(targetCell2, null);
+                floorTilemap.SetTile(targetCell2, floorTileAsset);
             }
         }
         else
