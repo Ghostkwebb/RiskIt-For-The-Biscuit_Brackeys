@@ -11,13 +11,18 @@ public class DebuffManager : MonoBehaviour
     [SerializeField] private float visionReductionAmount = 5f;
 
     [Header("Controller References")]
-    [SerializeField] private CoinDrainController coinDrainController; // <-- ADD THIS
+    [SerializeField] private CoinDrainController coinDrainController;
+
+    [Header("UI")]
+    [SerializeField] private DebuffUIManager uiManager;
 
     // References
     private PlayerMovement playerMovement;
     private PlayerVision playerVision;
     private MazeManager mazeManager;
     private TeleportManager teleportManager;
+    private int speedDebuffStacks = 0;
+    private int visionDebuffStacks = 0;
 
     void Start()
     {
@@ -41,6 +46,7 @@ public class DebuffManager : MonoBehaviour
         else
         {
             Debug.Log("No debuff this time!");
+            uiManager.ShowTemporaryDebuff("No Debuff!", Color.green);
         }
     }
 
@@ -50,24 +56,27 @@ public class DebuffManager : MonoBehaviour
 
         switch (debuffType)
         {
-            case 0:
-                Debug.Log("Applying Speed Debuff!");
+            case 0: // Speed - Stacking
+                speedDebuffStacks++;
                 playerMovement.ReduceSpeed(speedReductionAmount);
+                uiManager.AddOrUpdateStackingDebuff("Slow", Color.blue, speedDebuffStacks);
                 break;
-            case 1:
-                Debug.Log("Applying Vision Debuff!");
+            case 1: // Vision - Stacking
+                visionDebuffStacks++;
                 playerVision.ReduceVision(visionReductionAmount);
+                uiManager.AddOrUpdateStackingDebuff("Narrow Vision", Color.magenta, visionDebuffStacks);
                 break;
-            case 2:
+            case 2: // Block Path - Temporary
                 mazeManager.BlockPathBehindPlayer();
+                uiManager.ShowTemporaryDebuff("Path Blocked", Color.gray);
                 break;
-            case 3:
+            case 3: // Coin Drain - Stacking (but only 1 stack)
                 coinDrainController.ActivateDebuff();
+                uiManager.AddOrUpdateStackingDebuff("Coin Drain", Color.yellow, 1);
                 break;
-            case 4:
-                // --- CALL THE NEW DEBUFF ---
-                Debug.Log("Applying Teleport Debuff!");
+            case 4: // Teleport - Temporary
                 teleportManager.TeleportPlayerRandomly();
+                uiManager.ShowTemporaryDebuff("Teleported", Color.cyan);
                 break;
         }
     }
@@ -76,9 +85,13 @@ public class DebuffManager : MonoBehaviour
     {
         Debug.Log("SAFE ZONE REACHED: Removing all debuffs.");
 
-        // Tell each component to reset itself
         playerMovement.ResetSpeed();
         playerVision.ResetVision();
         coinDrainController.DeactivateDebuff();
+
+        // --- Clear UI and stacks ---
+        speedDebuffStacks = 0;
+        visionDebuffStacks = 0;
+        uiManager.ClearAllStackingDebuffs();
     }
 }
