@@ -229,10 +229,10 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.928
-  m_Color: {r: 0.7490196, g: 0.4862745, b: 0, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
+  m_FalloffIntensity: 0.58
+  m_Color: {r: 0.7490196, g: 0.5114774, b: 0, a: 1}
+  m_Intensity: 0.76
+  m_LightVolumeIntensity: 0.05
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 0000000015ac2fcf5d6dcb884d2105f5
   m_LightCookieSprite: {fileID: 0}
@@ -244,18 +244,18 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowsEnabled: 1
-  m_ShadowIntensity: 0.75
-  m_ShadowSoftness: 0.3
-  m_ShadowSoftnessFalloffIntensity: 0.5
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
+  m_ShadowIntensity: 0.58
+  m_ShadowSoftness: 0.29
+  m_ShadowSoftnessFalloffIntensity: 0.56
+  m_ShadowVolumeIntensityEnabled: 1
+  m_ShadowVolumeIntensity: 0.62
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5.12
+  m_PointLightInnerRadius: 0.89
+  m_PointLightOuterRadius: 3.23
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68533b662e724d4594ffe3046e65eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 7.5
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
