@@ -30,11 +30,38 @@ public class ConvergingEnemyAI : MonoBehaviour
         UpdateAnimationAndVisuals();
     }
 
+    void OnEnable()
+    {
+        PlayerHealth.OnPlayerDied += HandlePlayerDeath;
+        Initialize();
+    }
+
+    void OnDisable()
+    {
+        PlayerHealth.OnPlayerDied -= HandlePlayerDeath;
+    }
+
+    private void HandlePlayerDeath()
+    {
+        Debug.Log("Converging Enemy: Player has died. Stopping movement.");
+        playerTransform = null;
+        // We can just disable the AIPath to stop it
+        if (aiPath != null)
+        {
+            aiPath.canMove = false;
+        }
+    }
+
     private void Initialize()
     {
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
         audioSource = GetComponent<AudioSource>();
+
+        if (aiPath != null)
+        {
+            aiPath.canMove = true;
+        }
 
         if (bodyObject != null)
         {
@@ -48,6 +75,7 @@ public class ConvergingEnemyAI : MonoBehaviour
             aiPath.destination = playerTransform.position;
         }
 
+        CancelInvoke(nameof(UpdatePath));
         InvokeRepeating(nameof(UpdatePath), 0f, 0.5f);
     }
 

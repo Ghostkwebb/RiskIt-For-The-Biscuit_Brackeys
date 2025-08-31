@@ -6,12 +6,28 @@ public class SpecialEnemyManager : MonoBehaviour
     [SerializeField] private int coinThreshold = 2;
 
     [Header("Enemy References")]
-    [Tooltip("Drag all ConvergingEnemy instances from the Hierarchy into this list.")]
     [SerializeField] private ConvergingEnemyAI[] convergingEnemies;
 
     private Vector3[] enemyStartPositions;
     private PlayerStats playerStats;
     private bool enemiesAreActive = false;
+
+    void OnEnable()
+    {
+        PlayerHealth.OnPlayerDied += HandlePlayerDeath;
+    }
+
+    void OnDisable()
+    {
+        PlayerHealth.OnPlayerDied -= HandlePlayerDeath;
+    }
+
+    private void HandlePlayerDeath()
+    {
+        Debug.Log("SpecialEnemyManager: Player died. Deactivating all enemies.");
+        DeactivateAllEnemies();
+    }
+
 
     void Start()
     {
@@ -27,19 +43,22 @@ public class SpecialEnemyManager : MonoBehaviour
     {
         playerStats = FindFirstObjectByType<PlayerStats>();
 
-        // Store the starting positions and then disable the entire enemy GameObject.
         enemyStartPositions = new Vector3[convergingEnemies.Length];
         for (int i = 0; i < convergingEnemies.Length; i++)
         {
             if (convergingEnemies[i] == null) continue;
-
             enemyStartPositions[i] = convergingEnemies[i].transform.position;
-            convergingEnemies[i].gameObject.SetActive(false); // Disable the whole object
+            convergingEnemies[i].gameObject.SetActive(false);
         }
     }
 
     private void CheckActivationCondition()
     {
+        if (playerStats == null)
+        {
+            playerStats = FindFirstObjectByType<PlayerStats>();
+        }
+
         if (playerStats == null) return;
 
         if (playerStats.coinCount >= coinThreshold)
@@ -65,7 +84,7 @@ public class SpecialEnemyManager : MonoBehaviour
         {
             if (enemy != null)
             {
-                enemy.gameObject.SetActive(true); // Enable the whole object
+                enemy.gameObject.SetActive(true);
             }
         }
     }

@@ -436,12 +436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d75ac04407f45ecbde05604e772841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSourceA: {fileID: 4761987124744280676}
-  musicSourceB: {fileID: 637489501437599440}
+  musicSource: {fileID: 0}
   ambienceSource: {fileID: 2022898512146051174}
   sfxSource: {fileID: 8051793268575594600}
-  musicFadeTime: 2
-  musicPlaylist: []
   sounds:
   - name: coin_get
     clip: {fileID: 8300000, guid: e325172a38d5d4cf3b9e6a6c61d671bc, type: 3}
@@ -495,7 +492,7 @@ MonoBehaviour:
     loop: 1
   - name: player_death
     clip: {fileID: 8300000, guid: 60a7dde80ff474f99808f0dee6a3c9e8, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 0.1
     loop: 0
   - name: special_enemy_attack

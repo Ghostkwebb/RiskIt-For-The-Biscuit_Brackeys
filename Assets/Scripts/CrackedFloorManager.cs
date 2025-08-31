@@ -35,6 +35,7 @@ public class CrackedFloorManager : MonoBehaviour
 
     void Awake()
     {
+        GameManager.OnPlayerSpawned += InitializePlayerReferences;
         crackedTileAsset = initialCrackedTileAsset;
         crackedFloorTilemap = initialCrackedFloorTilemap;
         floorTilemap = initialFloorTilemap;
@@ -48,7 +49,7 @@ public class CrackedFloorManager : MonoBehaviour
         playerTransform = FindFirstObjectByType<PlayerMovement>().transform;
         playerStats = FindFirstObjectByType<PlayerStats>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-
+        InitializePlayerReferences();
         lastPlayerCell = crackedFloorTilemap.WorldToCell(playerTransform.position);
     }
 
@@ -120,6 +121,21 @@ public class CrackedFloorManager : MonoBehaviour
                 floorTilemap.SetTile(targetCell, normalFloorTile);
                 steppedOnCrackedTiles.Remove(targetCell);
             }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnPlayerSpawned -= InitializePlayerReferences;
+    }
+    private void InitializePlayerReferences()
+    {
+        // This method now works for both the initial spawn and respawns
+        if (GameManager.CurrentPlayerTransform != null)
+        {
+            playerTransform = GameManager.CurrentPlayerTransform;
+            playerStats = playerTransform.GetComponent<PlayerStats>();
+            playerMovement = playerTransform.GetComponent<PlayerMovement>();
         }
     }
 }

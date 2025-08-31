@@ -20,7 +20,7 @@ public class TorchPlacer : MonoBehaviour
     private Transform playerTransform;
     private PlayerStats playerStats;
 
-    void Start()
+    void Awake()
     {
         Initialize();
     }
@@ -34,21 +34,26 @@ public class TorchPlacer : MonoBehaviour
     private void Initialize()
     {
         playerTransform = transform;
-
         playerStats = GetComponent<PlayerStats>();
         if (playerStats == null)
         {
             Debug.LogError("PlayerStats script not found on the player!");
         }
 
-        torchPreview = Instantiate(torchPrefab);
-        torchPreview.name = "TorchPreview";
+        if (torchPreview == null)
+        {
+            torchPreview = Instantiate(torchPrefab);
+            torchPreview.name = "TorchPreview"; // Give it a consistent name
 
-        torchPreview.GetComponent<Collider2D>().enabled = false;
-        torchPreview.GetComponent<Animator>().enabled = false;
-        torchPreview.GetComponentInChildren<Light2D>().enabled = false;
+            torchPreview.GetComponent<Collider2D>().enabled = false;
+            torchPreview.GetComponent<Animator>().enabled = false;
+            torchPreview.GetComponentInChildren<Light2D>().enabled = false;
 
-        previewRenderer = torchPreview.GetComponent<SpriteRenderer>();
+            previewRenderer = torchPreview.GetComponent<SpriteRenderer>();
+        }
+
+        // Always ensure the preview is hidden when the player spawns
+        isPreviewActive = false;
         torchPreview.SetActive(false);
     }
 
@@ -70,6 +75,7 @@ public class TorchPlacer : MonoBehaviour
     {
         if (!isPreviewActive) return;
 
+        Vector3 playerPosition = GameManager.CurrentPlayerTransform.position;
         Vector3 targetWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int cellPosition = floorTilemap.WorldToCell(targetWorldPos);
         Vector3 snappedPosition = floorTilemap.GetCellCenterWorld(cellPosition);
@@ -99,7 +105,7 @@ public class TorchPlacer : MonoBehaviour
         Vector2 directionToTarget = position - playerTransform.position;
         float distanceToTarget = directionToTarget.magnitude;
         RaycastHit2D hit = Physics2D.Raycast(playerTransform.position, directionToTarget, distanceToTarget, wallLayer);
-
+        Vector3 playerPosition = GameManager.CurrentPlayerTransform.position;
         return adjacentWall != null && placementBlocked == null && hit.collider == null;
     }
 }

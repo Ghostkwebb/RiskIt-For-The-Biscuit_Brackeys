@@ -20,7 +20,7 @@ public class WallBreaker : MonoBehaviour
     private PlayerStats playerStats;
     private PlayerMovement playerMovement;
 
-    void Start()
+    void Awake()
     {
         Initialize();
     }
@@ -46,7 +46,6 @@ public class WallBreaker : MonoBehaviour
 
     private void BreakWallInFront()
     {
-
         if (playerStats.coinCount < coinCost)
         {
             Debug.Log("Not enough coins to break a wall!");

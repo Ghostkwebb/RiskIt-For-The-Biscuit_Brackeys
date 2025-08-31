@@ -47,6 +47,26 @@ public class EnemyAI : MonoBehaviour
         UpdateAnimation();
     }
 
+    void OnEnable()
+    {
+        // When this enemy is enabled, subscribe to the death event
+        PlayerHealth.OnPlayerDied += HandlePlayerDeath;
+    }
+
+    void OnDisable()
+    {
+        // When this enemy is disabled, unsubscribe to prevent errors
+        PlayerHealth.OnPlayerDied -= HandlePlayerDeath;
+    }
+
+    // This method is called automatically when the OnPlayerDied event is broadcasted
+    private void HandlePlayerDeath()
+    {
+        Debug.Log("Basic Enemy: Player has died. Returning to start.");
+        playerTransform = null;
+        ChangeState(State.RETURNING); // Go back to the returning state
+    }
+
     private void Initialize()
     {
         startPosition = transform.position;

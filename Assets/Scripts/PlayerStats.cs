@@ -1,49 +1,50 @@
 using UnityEngine;
-using TMPro; // Add this line to use TextMeshPro
+// We no longer need TMPro here
 
 public class PlayerStats : MonoBehaviour
 {
-    public int coinCount { get; private set; } = 0; // The current number of coins
+    public int coinCount { get; private set; } = 0;
 
-    [Header("UI")]
-    [SerializeField] private TextMeshProUGUI coinCountText;
 
     void Start()
     {
-        UpdateCoinUI();
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.UpdateCoinText(coinCount);
+        }
     }
 
-    // Call this to add coins
     public void AddCoins(int amount)
     {
         coinCount += amount;
-        UpdateCoinUI();
-        AudioManager.Instance.PlaySFX("coin_get");
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.UpdateCoinText(coinCount);
+            AudioManager.Instance.PlaySFX("coin_get");
+        }
     }
 
-    // Call this to try and spend coins
     public bool UseCoins(int amount)
     {
         if (coinCount >= amount)
         {
             coinCount -= amount;
-            UpdateCoinUI();
-            AudioManager.Instance.PlaySFX("coin_use");
-            return true; // Success
+            if (UIManager.Instance != null)
+            {
+                UIManager.Instance.UpdateCoinText(coinCount);
+                AudioManager.Instance.PlaySFX("coin_use");
+            }
+            return true;
         }
-
-        Debug.Log("Not enough coins!");
-        return false; // Failure
+        return false;
     }
 
-    private void UpdateCoinUI()
+    public void ResetCoins()
     {
-        if (coinCountText != null)
+        coinCount = 0;
+        if (UIManager.Instance != null)
         {
-            if (coinCount == 1 || coinCount == 0)
-                coinCountText.text = $"Coin: {coinCount}";
-            else
-                coinCountText.text = $"Coins: {coinCount}";
+            UIManager.Instance.UpdateCoinText(coinCount);
         }
     }
 }

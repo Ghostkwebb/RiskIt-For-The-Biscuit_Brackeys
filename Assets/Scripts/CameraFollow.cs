@@ -11,9 +11,28 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] private Vector3 offset; //(0, 0, -10)
 
+    void Update()
+    {
+        // If our target has been destroyed, try to find a new one.
+        if (target == null)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                target = playerObject.GetComponent<Rigidbody2D>();
+            }
+        }
+
+    }
+
     void LateUpdate()
     {
         HandleCameraFollow();
+    }
+
+    public void SetTarget(Rigidbody2D newTarget)
+    {
+        target = newTarget;
     }
 
     private void HandleCameraFollow()
