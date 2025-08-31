@@ -13,9 +13,6 @@
 | | | |
 |:---:|:---:|:---:|
 | ![Screenshot 1](https://github.com/user-attachments/assets/20f7f5de-8054-4b99-9dd6-956368427aa4) | ![Screenshot 2](https://github.com/user-attachments/assets/90ec82b0-2225-4def-a23d-fc50008fdce9) | ![Screenshot 3](https://github.com/user-attachments/assets/b9d5e453-1a0d-4016-8b74-1d2c1714a32a) |
-<img width="1610" height="902" alt="ss3" src="https://github.com/user-attachments/assets/b9d5e453-1a0d-4016-8b74-1d2c1714a32a" />
-<img width="1595" height="908" alt="ss2" src="https://github.com/user-attachments/assets/90ec82b0-2225-4def-a23d-fc50008fdce9" />
-<img width="1603" height="897" alt="ss1" src="https://github.com/user-attachments/assets/20f7f5de-8054-4b99-9dd6-956368427aa4" />
 
 ## About The Game
 
