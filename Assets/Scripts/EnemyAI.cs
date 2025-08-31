@@ -1,8 +1,6 @@
 using UnityEngine;
 using Pathfinding;
 
-[RequireComponent(typeof(Seeker))]
-[RequireComponent(typeof(AIPath))]
 public class EnemyAI : MonoBehaviour
 {
     [Header("Movement")]
@@ -10,8 +8,8 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Combat")]
     [SerializeField] private int damage = 1;
-    [SerializeField] private float attackCooldown = 1.5f; // Time between attacks
-    private float lastAttackTime = -999f; // Time when the last attack occurred
+    [SerializeField] private float attackCooldown = 1.5f;
+    private float lastAttackTime = -999f;
 
     [Header("Visuals")]
     [SerializeField] private Color aggroColor = Color.red;
@@ -22,18 +20,15 @@ public class EnemyAI : MonoBehaviour
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-
     private enum State { IDLE, CHASING, RETURNING }
     private State currentState;
-    private Transform playerTransform;
     private Vector3 startPosition;
 
-
-    // --- A* Component References ---
     private Seeker seeker;
     private AIPath aiPath;
-
     private Vector2 lastDirection = new Vector2(0, -1);
+
+    // No longer need to subscribe to events
 
     void Start()
     {
@@ -42,75 +37,23 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        // We use Update for state checks that don't involve physics.
         HandleStateChecks();
         UpdateAnimation();
-    }
-
-    void OnEnable()
-    {
-        // When this enemy is enabled, subscribe to the death event
-        PlayerHealth.OnPlayerDied += HandlePlayerDeath;
-    }
-
-    void OnDisable()
-    {
-        // When this enemy is disabled, unsubscribe to prevent errors
-        PlayerHealth.OnPlayerDied -= HandlePlayerDeath;
-    }
-
-    // This method is called automatically when the OnPlayerDied event is broadcasted
-    private void HandlePlayerDeath()
-    {
-        Debug.Log("Basic Enemy: Player has died. Returning to start.");
-        playerTransform = null;
-        ChangeState(State.RETURNING); // Go back to the returning state
     }
 
     private void Initialize()
     {
         startPosition = transform.position;
         currentState = State.IDLE;
-
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
-
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
         aiPath.canMove = false;
-
-        // --- Set initial facing direction in the animator ---
         animator.SetFloat("moveX", lastDirection.x);
         animator.SetFloat("moveY", lastDirection.y);
     }
 
-    private void UpdateAnimation()
-    {
-        bool isMoving = aiPath.canMove && !aiPath.reachedEndOfPath && aiPath.desiredVelocity.sqrMagnitude > 0.1f;
-        animator.SetBool("isMoving", isMoving);
-
-        if (isMoving)
-        {
-            lastDirection = aiPath.desiredVelocity.normalized;
-        }
-
-        animator.SetFloat("moveX", lastDirection.x);
-        animator.SetFloat("moveY", lastDirection.y);
-
-        if (isMoving && !walkAudioSource.isPlaying)
-        {
-            walkAudioSource.Play();
-            chaseAudioSource.Play();
-        }
-        else if (!isMoving && walkAudioSource.isPlaying)
-        {
-            walkAudioSource.Stop();
-            chaseAudioSource.Stop();
-        }
-    }
-
-    // This method decides WHEN to change state.
     private void HandleStateChecks()
     {
         switch (currentState)
@@ -118,12 +61,20 @@ public class EnemyAI : MonoBehaviour
             case State.IDLE:
                 aiPath.canMove = false;
                 spriteRenderer.color = Color.white;
+                StopAllSounds();
                 break;
 
             case State.CHASING:
+                // --- THE FIX: Constantly check for the player ---
+                if (GameManager.CurrentPlayer == null)
+                {
+                    ChangeState(State.RETURNING);
+                    return;
+                }
                 aiPath.canMove = true;
-                aiPath.destination = playerTransform.position;
+                aiPath.destination = GameManager.CurrentPlayer.transform.position;
                 spriteRenderer.color = aggroColor;
+                PlayChaseSound();
 
                 if (Vector2.Distance(transform.position, startPosition) > leashDistance)
                 {
@@ -135,6 +86,7 @@ public class EnemyAI : MonoBehaviour
                 aiPath.canMove = true;
                 aiPath.destination = startPosition;
                 spriteRenderer.color = Color.white;
+                PlayWalkSound();
 
                 if (aiPath.reachedEndOfPath)
                 {
@@ -144,22 +96,49 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // A helper method to cleanly change states and handle logic.
+    // --- AUDIO HELPER METHODS (from previous fix) ---
+    private void PlayWalkSound()
+    {
+        if (chaseAudioSource.isPlaying) chaseAudioSource.Stop();
+        if (!walkAudioSource.isPlaying) walkAudioSource.Play();
+    }
+
+    private void PlayChaseSound()
+    {
+        if (walkAudioSource.isPlaying) walkAudioSource.Stop();
+        if (!chaseAudioSource.isPlaying) chaseAudioSource.Play();
+    }
+
+    private void StopAllSounds()
+    {
+        if (walkAudioSource.isPlaying) walkAudioSource.Stop();
+        if (chaseAudioSource.isPlaying) chaseAudioSource.Stop();
+    }
+
+    private void UpdateAnimation()
+    {
+        // This logic is mostly fine, we just remove the redundant audio calls
+        bool isMoving = aiPath.canMove && !aiPath.reachedEndOfPath && aiPath.desiredVelocity.sqrMagnitude > 0.1f;
+        animator.SetBool("isMoving", isMoving);
+
+        if (isMoving)
+        {
+            lastDirection = aiPath.desiredVelocity.normalized;
+        }
+        animator.SetFloat("moveX", lastDirection.x);
+        animator.SetFloat("moveY", lastDirection.y);
+    }
+
     private void ChangeState(State newState)
     {
         if (currentState == newState) return;
-
         currentState = newState;
-        Debug.Log($"Enemy changed state to: {currentState}");
     }
-
-    // --- DETECTION AND COMBAT ---
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            playerTransform = other.transform;
             ChangeState(State.CHASING);
         }
     }
@@ -168,7 +147,6 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerTransform = null;
             ChangeState(State.RETURNING);
         }
     }
@@ -183,15 +161,9 @@ public class EnemyAI : MonoBehaviour
 
     private void Attack(PlayerHealth playerHealth)
     {
-        Debug.Log("Enemy is attacking the player!");
-
         lastAttackTime = Time.time;
-
         animator.SetTrigger("Attack");
-
         AudioManager.Instance.PlaySFX("basic_enemy_attack");
-
-        // Damage the player
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);

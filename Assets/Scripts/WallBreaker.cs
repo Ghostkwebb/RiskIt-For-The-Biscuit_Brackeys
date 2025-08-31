@@ -36,6 +36,19 @@ public class WallBreaker : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
+    public void InitializeSceneReferences(Tilemap wallMap, Tilemap floorMap, TileBase floorAsset)
+    {
+        wallTilemap = wallMap;
+        floorTilemap = floorMap;
+        floorTileAsset = floorAsset;
+    }
+
+    public void SetTilemaps(Tilemap wallMap, Tilemap floorMap)
+    {
+        wallTilemap = wallMap;
+        floorTilemap = floorMap;
+    }
+
     private void HandleInteraction()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -46,6 +59,12 @@ public class WallBreaker : MonoBehaviour
 
     private void BreakWallInFront()
     {
+        if (wallTilemap == null || floorTilemap == null || floorTileAsset == null)
+        {
+            Debug.LogError("WallBreaker is missing references! Was it initialized by the GameManager?");
+            return;
+        }
+
         if (playerStats.coinCount < coinCost)
         {
             Debug.Log("Not enough coins to break a wall!");

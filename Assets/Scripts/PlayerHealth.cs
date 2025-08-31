@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth { get; private set; }
 
     public int currentHealth { get; private set; }
-    public event Action OnHealthChanged;
 
     [Header("Death")]
     [SerializeField] private GameObject coinPouchPrefab;
@@ -70,25 +69,32 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player has died!");
         AudioManager.Instance.PlaySFX("player_death");
 
+        // Broadcast the death event so enemies and managers can react.
         OnPlayerDied?.Invoke();
 
-        // --- COIN POUCH LOGIC (SIMPLIFIED) ---
-
+        // --- Coin Pouch Logic ---
         if (playerStats.coinCount > 0)
         {
             GameObject newPouch = Instantiate(coinPouchPrefab, transform.position, Quaternion.identity);
             CoinPouch pouchScript = newPouch.GetComponent<CoinPouch>();
             pouchScript.coinsHeld = playerStats.coinCount;
             newPouch.transform.SetParent(null);
-
             playerStats.ResetCoins();
         }
 
+        // --- THIS IS THE ONLY RESPAWN CALL ---
+        // We already have a reference to the gameManager from Start(), so we use that.
         if (gameManager != null)
         {
             gameManager.RespawnPlayer();
         }
+        else
+        {
+            // Safety net in case the reference is lost.
+            FindFirstObjectByType<GameManager>().RespawnPlayer();
+        }
 
+        // Finally, destroy this player object.
         Destroy(gameObject);
     }
 }

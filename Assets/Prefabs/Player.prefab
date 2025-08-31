@@ -436,7 +436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fc3948d5fe14c7e8e820c8231f5d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCountText: {fileID: 0}
 --- !u!114 &1853076031908946062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0332abb1d1449a9875b4ac95bc2c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCost: 2
+  coinCost: 10
   wallTilemap: {fileID: 0}
   floorTilemap: {fileID: 0}
   floorTileAsset: {fileID: 11400000, guid: e230b23c4ee6e4dcdac764039dcdc031, type: 2}
