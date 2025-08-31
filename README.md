@@ -1,12 +1,15 @@
-# The Quota
-
-![The Quota Logo](https://github.com/user-attachments/assets/614ce7fd-e441-443b-85a6-70abc4a36b8b)
+<table>
+  <tr>
+    <td valign="middle"><h1>The Quota</h1></td>
+    <td valign="middle"><img src="https://github.com/user-attachments/assets/614ce7fd-e441-443b-85a6-70abc4a36b8b" alt="The Quota Logo" width="200"></td>
+  </tr>
+</table>
 
 ### _Risk it all for one last score._
 
 ---
 
-[**► Play The Game on itch.io! ◄**](https://ghostkwebb.itch.io/the-quota)
+<a href="https://ghostkwebb.itch.io/the-quota" target="_blank"><strong>► Play The Game on itch.io! ◄</strong></a>
 
 ---
 
