@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float minMoveSpeed = 1f;
 
+    private Animator animator;
+
     private Rigidbody2D rb;
     private Vector2 movement;
     private AudioSource walkingAudioSource;
@@ -16,11 +18,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         walkingAudioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         HandleInput();
+        UpdateAnimation();
     }
 
     void FixedUpdate()
@@ -53,6 +57,16 @@ public class PlayerMovement : MonoBehaviour
             lastCardinalDirection = movement.normalized;
         }
     }
+
+    private void UpdateAnimation()
+    {
+        bool isMoving = movement.sqrMagnitude > 0.1f;
+        animator.SetBool("isMoving", isMoving);
+
+        animator.SetFloat("moveX", lastCardinalDirection.x);
+        animator.SetFloat("moveY", lastCardinalDirection.y);
+    }
+
 
     private void HandleMovement()
     {

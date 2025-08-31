@@ -1,0 +1,2701 @@
+fileFormatVersion: 2
+guid: ee135e4331a48479da4062d011bb349d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3727880723591319343
+    second: skull_knight-Sheet_1-export_0
+  - first:
+      213: -8181499234480353079
+    second: skull_knight-Sheet_1-export_1
+  - first:
+      213: 2317610966660970588
+    second: skull_knight-Sheet_1-export_2
+  - first:
+      213: 8251327740633166653
+    second: skull_knight-Sheet_1-export_3
+  - first:
+      213: -832567316514383521
+    second: skull_knight-Sheet_1-export_4
+  - first:
+      213: -6263004638845414225
+    second: skull_knight-Sheet_1-export_5
+  - first:
+      213: 8450175484645647289
+    second: skull_knight-Sheet_1-export_6
+  - first:
+      213: -5597964447413690423
+    second: skull_knight-Sheet_1-export_7
+  - first:
+      213: 2183930020223345755
+    second: skull_knight-Sheet_1-export_8
+  - first:
+      213: 4029574232798264408
+    second: skull_knight-Sheet_1-export_9
+  - first:
+      213: -4663631242054684951
+    second: skull_knight-Sheet_1-export_10
+  - first:
+      213: 8443920031689526298
+    second: skull_knight-Sheet_1-export_11
+  - first:
+      213: 8610042208712571344
+    second: skull_knight-Sheet_1-export_12
+  - first:
+      213: -3479514952983943425
+    second: skull_knight-Sheet_1-export_13
+  - first:
+      213: -2884283382284982920
+    second: skull_knight-Sheet_1-export_14
+  - first:
+      213: -5061714882982195893
+    second: skull_knight-Sheet_1-export_15
+  - first:
+      213: -7852348361205492378
+    second: skull_knight-Sheet_1-export_16
+  - first:
+      213: -1121671096258587741
+    second: skull_knight-Sheet_1-export_17
+  - first:
+      213: -1603425527030233514
+    second: skull_knight-Sheet_1-export_18
+  - first:
+      213: -5126300887599591392
+    second: skull_knight-Sheet_1-export_19
+  - first:
+      213: -7858302242642291613
+    second: skull_knight-Sheet_1-export_20
+  - first:
+      213: -3523034891887826104
+    second: skull_knight-Sheet_1-export_21
+  - first:
+      213: 5832343039734017109
+    second: skull_knight-Sheet_1-export_22
+  - first:
+      213: 4155519773394431187
+    second: skull_knight-Sheet_1-export_23
+  - first:
+      213: -1349713729381964171
+    second: skull_knight-Sheet_1-export_24
+  - first:
+      213: -2227743301563524747
+    second: skull_knight-Sheet_1-export_25
+  - first:
+      213: -4242901228735361602
+    second: skull_knight-Sheet_1-export_26
+  - first:
+      213: -8542549172152319542
+    second: skull_knight-Sheet_1-export_27
+  - first:
+      213: -1607434847538769500
+    second: skull_knight-Sheet_1-export_28
+  - first:
+      213: 5421590480222507643
+    second: skull_knight-Sheet_1-export_29
+  - first:
+      213: 3859879428667824650
+    second: skull_knight-Sheet_1-export_30
+  - first:
+      213: -5835734822462323221
+    second: skull_knight-Sheet_1-export_31
+  - first:
+      213: 7039121781687738894
+    second: skull_knight-Sheet_1-export_32
+  - first:
+      213: -7101074550619115296
+    second: skull_knight-Sheet_1-export_33
+  - first:
+      213: -7636004498877022305
+    second: skull_knight-Sheet_1-export_34
+  - first:
+      213: 344819331417107682
+    second: skull_knight-Sheet_1-export_35
+  - first:
+      213: -7545770667052416109
+    second: skull_knight-Sheet_1-export_36
+  - first:
+      213: 114355844009373566
+    second: skull_knight-Sheet_1-export_37
+  - first:
+      213: 8673197113743152773
+    second: skull_knight-Sheet_1-export_38
+  - first:
+      213: 1167364925008593017
+    second: skull_knight-Sheet_1-export_39
+  - first:
+      213: 4128778270040342109
+    second: skull_knight-Sheet_1-export_40
+  - first:
+      213: -8713860425903728360
+    second: skull_knight-Sheet_1-export_41
+  - first:
+      213: -5435151631305894690
+    second: skull_knight-Sheet_1-export_42
+  - first:
+      213: 5906629829140845954
+    second: skull_knight-Sheet_1-export_43
+  - first:
+      213: -3812746307836736485
+    second: skull_knight-Sheet_1-export_44
+  - first:
+      213: 4826570634490704156
+    second: skull_knight-Sheet_1-export_45
+  - first:
+      213: -8865689078945009696
+    second: skull_knight-Sheet_1-export_46
+  - first:
+      213: -3459804886346207313
+    second: skull_knight-Sheet_1-export_47
+  - first:
+      213: 5198390077549142284
+    second: skull_knight-Sheet_1-export_48
+  - first:
+      213: -8214882921409130675
+    second: skull_knight-Sheet_1-export_49
+  - first:
+      213: 771403072453891358
+    second: skull_knight-Sheet_1-export_50
+  - first:
+      213: 6584134650954759388
+    second: skull_knight-Sheet_1-export_51
+  - first:
+      213: -3367343794451362403
+    second: skull_knight-Sheet_1-export_52
+  - first:
+      213: -2341596473118101714
+    second: skull_knight-Sheet_1-export_53
+  - first:
+      213: 1568515890243381365
+    second: skull_knight-Sheet_1-export_54
+  - first:
+      213: -5646744129842622543
+    second: skull_knight-Sheet_1-export_55
+  - first:
+      213: -5085136302570986390
+    second: skull_knight-Sheet_1-export_56
+  - first:
+      213: -1949827176647363895
+    second: skull_knight-Sheet_1-export_57
+  - first:
+      213: -6969089022092962993
+    second: skull_knight-Sheet_1-export_58
+  - first:
+      213: 8387477275769362659
+    second: skull_knight-Sheet_1-export_59
+  - first:
+      213: 3297019945646237997
+    second: skull_knight-Sheet_1-export_60
+  - first:
+      213: 1123040515801357380
+    second: skull_knight-Sheet_1-export_61
+  - first:
+      213: -3986656709416658426
+    second: skull_knight-Sheet_1-export_62
+  - first:
+      213: 3090158321330261468
+    second: skull_knight-Sheet_1-export_63
+  - first:
+      213: 5653322476767806512
+    second: skull_knight-Sheet_1-export_64
+  - first:
+      213: -6342897376896612479
+    second: skull_knight-Sheet_1-export_65
+  - first:
+      213: -3259627028740254937
+    second: skull_knight-Sheet_1-export_66
+  - first:
+      213: 3914006098899070727
+    second: skull_knight-Sheet_1-export_67
+  - first:
+      213: 3540428728730725815
+    second: skull_knight-Sheet_1-export_68
+  - first:
+      213: 5653862659192595684
+    second: skull_knight-Sheet_1-export_69
+  - first:
+      213: 616315958437138986
+    second: skull_knight-Sheet_1-export_70
+  - first:
+      213: 2567996968970417393
+    second: skull_knight-Sheet_1-export_71
+  - first:
+      213: -4878261550035881533
+    second: skull_knight-Sheet_1-export_72
+  - first:
+      213: 2302299327465677689
+    second: skull_knight-Sheet_1-export_73
+  - first:
+      213: 7546114344327352932
+    second: skull_knight-Sheet_1-export_74
+  - first:
+      213: 5638999806438702025
+    second: skull_knight-Sheet_1-export_75
+  - first:
+      213: 6729250473602791200
+    second: skull_knight-Sheet_1-export_76
+  - first:
+      213: 4932052643291633737
+    second: skull_knight-Sheet_1-export_77
+  - first:
+      213: -4639638341529535113
+    second: skull_knight-Sheet_1-export_78
+  - first:
+      213: 6102686125818915748
+    second: skull_knight-Sheet_1-export_79
+  - first:
+      213: -8520135635569786082
+    second: skull_knight-Sheet_1-export_80
+  - first:
+      213: -5837555909032267567
+    second: skull_knight-Sheet_1-export_81
+  - first:
+      213: -3469539346802801666
+    second: skull_knight-Sheet_1-export_82
+  - first:
+      213: 7386209210408843637
+    second: skull_knight-Sheet_1-export_83
+  - first:
+      213: 9154909254333971944
+    second: skull_knight-Sheet_1-export_84
+  - first:
+      213: -8620279703777430550
+    second: skull_knight-Sheet_1-export_85
+  - first:
+      213: -2240398348237786692
+    second: skull_knight-Sheet_1-export_86
+  - first:
+      213: -4326151766242176486
+    second: skull_knight-Sheet_1-export_87
+  - first:
+      213: -7578889205750612659
+    second: skull_knight-Sheet_1-export_88
+  - first:
+      213: 6788493529210281772
+    second: skull_knight-Sheet_1-export_89
+  - first:
+      213: -7459840026231298583
+    second: skull_knight-Sheet_1-export_90
+  - first:
+      213: 8789972391266865528
+    second: skull_knight-Sheet_1-export_91
+  - first:
+      213: 67283038969421511
+    second: skull_knight-Sheet_1-export_92
+  - first:
+      213: 5593842120559107204
+    second: skull_knight-Sheet_1-export_93
+  - first:
+      213: 2433037327681537975
+    second: skull_knight-Sheet_1-export_94
+  - first:
+      213: 186570964576842881
+    second: skull_knight-Sheet_1-export_95
+  - first:
+      213: -5581571823163914041
+    second: skull_knight-Sheet_1-export_96
+  - first:
+      213: -4069141948108987911
+    second: skull_knight-Sheet_1-export_97
+  - first:
+      213: -3569294637057029748
+    second: skull_knight-Sheet_1-export_98
+  - first:
+      213: 531011998774922807
+    second: skull_knight-Sheet_1-export_99
+  - first:
+      213: 6106384316351451716
+    second: skull_knight-Sheet_1-export_100
+  - first:
+      213: 6854148636179708719
+    second: skull_knight-Sheet_1-export_101
+  - first:
+      213: -4852254273248770894
+    second: skull_knight-Sheet_1-export_102
+  - first:
+      213: 6126145858345921953
+    second: skull_knight-Sheet_1-export_103
+  - first:
+      213: -2677835598825985707
+    second: skull_knight-Sheet_1-export_104
+  - first:
+      213: -445602500505316795
+    second: skull_knight-Sheet_1-export_105
+  - first:
+      213: 6126148158781056816
+    second: skull_knight-Sheet_1-export_106
+  - first:
+      213: 1720245983071944047
+    second: skull_knight-Sheet_1-export_107
+  - first:
+      213: -7121023868092706732
+    second: skull_knight-Sheet_1-export_108
+  - first:
+      213: 1761895183600024196
+    second: skull_knight-Sheet_1-export_109
+  - first:
+      213: -5127620004433902330
+    second: skull_knight-Sheet_1-export_110
+  - first:
+      213: -3021322432952453010
+    second: skull_knight-Sheet_1-export_111
+  - first:
+      213: -6883842151861439870
+    second: skull_knight-Sheet_1-export_112
+  - first:
+      213: -1829079543456777146
+    second: skull_knight-Sheet_1-export_113
+  - first:
+      213: -7476132251307377550
+    second: skull_knight-Sheet_1-export_114
+  - first:
+      213: -3862751215361994824
+    second: skull_knight-Sheet_1-export_115
+  - first:
+      213: -442566576967175596
+    second: skull_knight-Sheet_1-export_116
+  - first:
+      213: -7023711751823407062
+    second: skull_knight-Sheet_1-export_117
+  - first:
+      213: -2931295165217209949
+    second: skull_knight-Sheet_1-export_118
+  - first:
+      213: 7293966194915338158
+    second: skull_knight-Sheet_1-export_119
+  - first:
+      213: -3565509223719683521
+    second: skull_knight-Sheet_1-export_120
+  - first:
+      213: 6246059119978116246
+    second: skull_knight-Sheet_1-export_121
+  - first:
+      213: -7599045101479855363
+    second: skull_knight-Sheet_1-export_122
+  - first:
+      213: 1344416875741300960
+    second: skull_knight-Sheet_1-export_123
+  - first:
+      213: 2238904932344674338
+    second: skull_knight-Sheet_1-export_124
+  - first:
+      213: 8215355638000837229
+    second: skull_knight-Sheet_1-export_125
+  - first:
+      213: -298217666690870716
+    second: skull_knight-Sheet_1-export_126
+  - first:
+      213: -5481482735698482453
+    second: skull_knight-Sheet_1-export_127
+  - first:
+      213: 5535570427081607956
+    second: skull_knight-Sheet_1-export_128
+  - first:
+      213: -3960399004179330192
+    second: skull_knight-Sheet_1-export_129
+  - first:
+      213: -5733957440901782034
+    second: skull_knight-Sheet_1-export_130
+  - first:
+      213: -2610389584225539386
+    second: skull_knight-Sheet_1-export_131
+  - first:
+      213: -6848422012007089959
+    second: skull_knight-Sheet_1-export_132
+  - first:
+      213: 2347415940554538211
+    second: skull_knight-Sheet_1-export_133
+  - first:
+      213: -4288327284876445753
+    second: skull_knight-Sheet_1-export_134
+  - first:
+      213: -997130413129774082
+    second: skull_knight-Sheet_1-export_135
+  - first:
+      213: -8101279683172059426
+    second: skull_knight-Sheet_1-export_136
+  - first:
+      213: 3583837783628685509
+    second: skull_knight-Sheet_1-export_137
+  - first:
+      213: -4294279266379455213
+    second: skull_knight-Sheet_1-export_138
+  - first:
+      213: -8169414655678089477
+    second: skull_knight-Sheet_1-export_139
+  - first:
+      213: 6206539879188860108
+    second: skull_knight-Sheet_1-export_140
+  - first:
+      213: 379594110001355839
+    second: skull_knight-Sheet_1-export_141
+  - first:
+      213: -4572340045497817811
+    second: skull_knight-Sheet_1-export_142
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d03059ab38e34cc0800000000000000
+      internalID: -3727880723591319343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c01bae2bc9757e80800000000000000
+      internalID: -8181499234480353079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58706b15eec92020800000000000000
+      internalID: 2317610966660970588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3334c9dcda928270800000000000000
+      internalID: 8251327740633166653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f595f8fcf602274f0800000000000000
+      internalID: -832567316514383521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4defab6765519a0800000000000000
+      internalID: -6263004638845414225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3a40415dd054570800000000000000
+      internalID: 8450175484645647289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf14ae8ef80052b0800000000000000
+      internalID: -5597964447413690423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5469bd48c0ee4e10800000000000000
+      internalID: 2183930020223345755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_9
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85cf1064a6cebe730800000000000000
+      internalID: 4029574232798264408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eeaae52814774fb0800000000000000
+      internalID: -4663631242054684951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1cc8a0f784de2570800000000000000
+      internalID: 8443920031689526298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9be6755c30d7770800000000000000
+      internalID: 8610042208712571344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff66bb4e59746bfc0800000000000000
+      internalID: -3479514952983943425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875675f9b87f8f7d0800000000000000
+      internalID: -2884283382284982920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4dc98dc12d21c9b0800000000000000
+      internalID: -5061714882982195893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665d9bdd4cad60390800000000000000
+      internalID: -7852348361205492378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a31fa0b4160f60f0800000000000000
+      internalID: -1121671096258587741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656c19d7afc7fb9e0800000000000000
+      internalID: -1603425527030233514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0205bd6c088bbd8b0800000000000000
+      internalID: -5126300887599591392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36496a1deb3b1f290800000000000000
+      internalID: -7858302242642291613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b28b18e6aab1fc0800000000000000
+      internalID: -3523034891887826104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c6193f715a0f050800000000000000
+      internalID: 5832343039734017109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc694e873f5ba930800000000000000
+      internalID: 4155519773394431187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57668b3a38ad44de0800000000000000
+      internalID: -1349713729381964171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579dc8335477511e0800000000000000
+      internalID: -2227743301563524747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd0924ffcf2e15c0800000000000000
+      internalID: -4242901228735361602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1cd8dc9c4c27980800000000000000
+      internalID: -8542549172152319542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a11ed0d58e31b9e0800000000000000
+      internalID: -1607434847538769500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b725d4321db5d3b40800000000000000
+      internalID: 5421590480222507643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a559dc3eb019530800000000000000
+      internalID: 3859879428667824650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be581c7191e430fa0800000000000000
+      internalID: -5835734822462323221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02663037fbffa160800000000000000
+      internalID: 7039121781687738894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e0f7ceb15ae37d90800000000000000
+      internalID: -7101074550619115296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f76259d56770690800000000000000
+      internalID: -7636004498877022305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_35
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ecedc0ea5b09c400800000000000000
+      internalID: 344819331417107682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39347c9be89084790800000000000000
+      internalID: -7545770667052416109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_37
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f2b24c806469100800000000000000
+      internalID: 114355844009373566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5869a9782d26d5870800000000000000
+      internalID: 8673197113743152773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970436ed630533010800000000000000
+      internalID: 1167364925008593017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_40
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e3b1e16fd5c4930800000000000000
+      internalID: 4128778270040342109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_41
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8199ca35c16221780800000000000000
+      internalID: -8713860425903728360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed490a353667294b0800000000000000
+      internalID: -5435151631305894690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_43
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2859aa1f88098f150800000000000000
+      internalID: 5906629829140845954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c85be0f67661bc0800000000000000
+      internalID: -3812746307836736485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_45
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1176287b6c6bf240800000000000000
+      internalID: 4826570634490704156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef2c6051ceb6f480800000000000000
+      internalID: -8865689078945009696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_47
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf6c2569cd4cffc0800000000000000
+      internalID: -3459804886346207313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c016b38bb34642840800000000000000
+      internalID: 5198390077549142284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f4cfdd18fdefd80800000000000000
+      internalID: -8214882921409130675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_50
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e155240e10394ba00800000000000000
+      internalID: 771403072453891358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcbf7fa49b8f5b50800000000000000
+      internalID: 6584134650954759388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d4c1fe8aac441d0800000000000000
+      internalID: -3367343794451362403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_53
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fec7cf96af08fd0800000000000000
+      internalID: -2341596473118101714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578238e44ec74c510800000000000000
+      internalID: 1568515890243381365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_55
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf4533b12cb2a1b0800000000000000
+      internalID: -5646744129842622543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_56
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6420da9977fd69b0800000000000000
+      internalID: -5085136302570986390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_57
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2f7827382d0f4e0800000000000000
+      internalID: -1949827176647363895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43131e4572d84f90800000000000000
+      internalID: -6969089022092962993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_59
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8d4efb42e466470800000000000000
+      internalID: 8387477275769362659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d292f951c2e51cd20800000000000000
+      internalID: 3297019945646237997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_61
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c16b42667d59f00800000000000000
+      internalID: 1123040515801357380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_62
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60adac158dc8ca8c0800000000000000
+      internalID: -3986656709416658426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_63
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdd8b92fe9272ea20800000000000000
+      internalID: 3090158321330261468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0340a7c07d2a47e40800000000000000
+      internalID: 5653322476767806512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_65
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187025b117089f7a0800000000000000
+      internalID: -6342897376896612479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723dca3dc7a73c2d0800000000000000
+      internalID: -3259627028740254937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_67
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f67954fc7515630800000000000000
+      internalID: 3914006098899070727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd2598bb21222130800000000000000
+      internalID: 3540428728730725815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_69
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e42502122e867e40800000000000000
+      internalID: 5653862659192595684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_70
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22dc0c49189d8800800000000000000
+      internalID: 616315958437138986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_71
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4f2cf23ab53a320800000000000000
+      internalID: 2567996968970417393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c13aa467feec4cb0800000000000000
+      internalID: -4878261550035881533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_73
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973663c4a0963ff10800000000000000
+      internalID: 2302299327465677689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_74
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4629c10e30f29b860800000000000000
+      internalID: 7546114344327352932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_75
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb764f7270c14e40800000000000000
+      internalID: 5638999806438702025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_76
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02739b317a9136d50800000000000000
+      internalID: 6729250473602791200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9489ce87fbb227440800000000000000
+      internalID: 4932052643291633737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_78
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77d79de9281bc9fb0800000000000000
+      internalID: -4639638341529535113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_79
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab2421b2b811b450800000000000000
+      internalID: 6102686125818915748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1347b3f7c562c980800000000000000
+      internalID: -8520135635569786082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_81
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d036a554d5dcfea0800000000000000
+      internalID: -5837555909032267567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_82
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef30493b858b9dfc0800000000000000
+      internalID: -3469539346802801666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_83
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579332f9426118660800000000000000
+      internalID: 7386209210408843637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_84
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed33874675cc0f70800000000000000
+      internalID: 9154909254333971944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_85
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae336d7184d9e5880800000000000000
+      internalID: -8620279703777430550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_86
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb13ae9829188e0e0800000000000000
+      internalID: -2240398348237786692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12d4b8b3eb66f3c0800000000000000
+      internalID: -4326151766242176486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_88
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d313b0c6062d690800000000000000
+      internalID: -7578889205750612659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_89
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2fdd98d5e2953e50800000000000000
+      internalID: 6788493529210281772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_90
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e52e332503597890800000000000000
+      internalID: -7459840026231298583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skull_knight-Sheet_1-export_91
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871d3fe81514cf970800000000000000
+      internalID: 8789972391266865528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 01b9d4147a650437d969bd7814a351ad
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      skull_knight-Sheet_1-export_0: -3727880723591319343
+      skull_knight-Sheet_1-export_1: -8181499234480353079
+      skull_knight-Sheet_1-export_10: -4663631242054684951
+      skull_knight-Sheet_1-export_11: 8443920031689526298
+      skull_knight-Sheet_1-export_12: 8610042208712571344
+      skull_knight-Sheet_1-export_13: -3479514952983943425
+      skull_knight-Sheet_1-export_14: -2884283382284982920
+      skull_knight-Sheet_1-export_15: -5061714882982195893
+      skull_knight-Sheet_1-export_16: -7852348361205492378
+      skull_knight-Sheet_1-export_17: -1121671096258587741
+      skull_knight-Sheet_1-export_18: -1603425527030233514
+      skull_knight-Sheet_1-export_19: -5126300887599591392
+      skull_knight-Sheet_1-export_2: 2317610966660970588
+      skull_knight-Sheet_1-export_20: -7858302242642291613
+      skull_knight-Sheet_1-export_21: -3523034891887826104
+      skull_knight-Sheet_1-export_22: 5832343039734017109
+      skull_knight-Sheet_1-export_23: 4155519773394431187
+      skull_knight-Sheet_1-export_24: -1349713729381964171
+      skull_knight-Sheet_1-export_25: -2227743301563524747
+      skull_knight-Sheet_1-export_26: -4242901228735361602
+      skull_knight-Sheet_1-export_27: -8542549172152319542
+      skull_knight-Sheet_1-export_28: -1607434847538769500
+      skull_knight-Sheet_1-export_29: 5421590480222507643
+      skull_knight-Sheet_1-export_3: 8251327740633166653
+      skull_knight-Sheet_1-export_30: 3859879428667824650
+      skull_knight-Sheet_1-export_31: -5835734822462323221
+      skull_knight-Sheet_1-export_32: 7039121781687738894
+      skull_knight-Sheet_1-export_33: -7101074550619115296
+      skull_knight-Sheet_1-export_34: -7636004498877022305
+      skull_knight-Sheet_1-export_35: 344819331417107682
+      skull_knight-Sheet_1-export_36: -7545770667052416109
+      skull_knight-Sheet_1-export_37: 114355844009373566
+      skull_knight-Sheet_1-export_38: 8673197113743152773
+      skull_knight-Sheet_1-export_39: 1167364925008593017
+      skull_knight-Sheet_1-export_4: -832567316514383521
+      skull_knight-Sheet_1-export_40: 4128778270040342109
+      skull_knight-Sheet_1-export_41: -8713860425903728360
+      skull_knight-Sheet_1-export_42: -5435151631305894690
+      skull_knight-Sheet_1-export_43: 5906629829140845954
+      skull_knight-Sheet_1-export_44: -3812746307836736485
+      skull_knight-Sheet_1-export_45: 4826570634490704156
+      skull_knight-Sheet_1-export_46: -8865689078945009696
+      skull_knight-Sheet_1-export_47: -3459804886346207313
+      skull_knight-Sheet_1-export_48: 5198390077549142284
+      skull_knight-Sheet_1-export_49: -8214882921409130675
+      skull_knight-Sheet_1-export_5: -6263004638845414225
+      skull_knight-Sheet_1-export_50: 771403072453891358
+      skull_knight-Sheet_1-export_51: 6584134650954759388
+      skull_knight-Sheet_1-export_52: -3367343794451362403
+      skull_knight-Sheet_1-export_53: -2341596473118101714
+      skull_knight-Sheet_1-export_54: 1568515890243381365
+      skull_knight-Sheet_1-export_55: -5646744129842622543
+      skull_knight-Sheet_1-export_56: -5085136302570986390
+      skull_knight-Sheet_1-export_57: -1949827176647363895
+      skull_knight-Sheet_1-export_58: -6969089022092962993
+      skull_knight-Sheet_1-export_59: 8387477275769362659
+      skull_knight-Sheet_1-export_6: 8450175484645647289
+      skull_knight-Sheet_1-export_60: 3297019945646237997
+      skull_knight-Sheet_1-export_61: 1123040515801357380
+      skull_knight-Sheet_1-export_62: -3986656709416658426
+      skull_knight-Sheet_1-export_63: 3090158321330261468
+      skull_knight-Sheet_1-export_64: 5653322476767806512
+      skull_knight-Sheet_1-export_65: -6342897376896612479
+      skull_knight-Sheet_1-export_66: -3259627028740254937
+      skull_knight-Sheet_1-export_67: 3914006098899070727
+      skull_knight-Sheet_1-export_68: 3540428728730725815
+      skull_knight-Sheet_1-export_69: 5653862659192595684
+      skull_knight-Sheet_1-export_7: -5597964447413690423
+      skull_knight-Sheet_1-export_70: 616315958437138986
+      skull_knight-Sheet_1-export_71: 2567996968970417393
+      skull_knight-Sheet_1-export_72: -4878261550035881533
+      skull_knight-Sheet_1-export_73: 2302299327465677689
+      skull_knight-Sheet_1-export_74: 7546114344327352932
+      skull_knight-Sheet_1-export_75: 5638999806438702025
+      skull_knight-Sheet_1-export_76: 6729250473602791200
+      skull_knight-Sheet_1-export_77: 4932052643291633737
+      skull_knight-Sheet_1-export_78: -4639638341529535113
+      skull_knight-Sheet_1-export_79: 6102686125818915748
+      skull_knight-Sheet_1-export_8: 2183930020223345755
+      skull_knight-Sheet_1-export_80: -8520135635569786082
+      skull_knight-Sheet_1-export_81: -5837555909032267567
+      skull_knight-Sheet_1-export_82: -3469539346802801666
+      skull_knight-Sheet_1-export_83: 7386209210408843637
+      skull_knight-Sheet_1-export_84: 9154909254333971944
+      skull_knight-Sheet_1-export_85: -8620279703777430550
+      skull_knight-Sheet_1-export_86: -2240398348237786692
+      skull_knight-Sheet_1-export_87: -4326151766242176486
+      skull_knight-Sheet_1-export_88: -7578889205750612659
+      skull_knight-Sheet_1-export_89: 6788493529210281772
+      skull_knight-Sheet_1-export_9: 4029574232798264408
+      skull_knight-Sheet_1-export_90: -7459840026231298583
+      skull_knight-Sheet_1-export_91: 8789972391266865528
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
